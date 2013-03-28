@@ -35,22 +35,22 @@ class WriterDocument
     /**
     * @var      int
     */
-    public $writerDocumentId; // (int)
+    public $writerDocumentId;
     
     /**
     * @var      String
     */
-    public $docTitle; // (String)
+    public $docTitle;
     
     /**
     * @var      String
     */
-    public $contentType; // (String)
+    public $contentType;
     
     /**
     * @var      String
     */
-    public $docContent; // (String)    
+    public $docContent;    
 
 }
 
@@ -101,14 +101,14 @@ class WriterDocumentMgr
        
       //extrait les instances
        $i=0;
-       while($result->seek($i)){
+       while( $result->seek($i,iDatabaseQuery::Origin) ){
         $inst = new WriterDocument();
         WriterDocumentMgr::bindResult($inst,$result);
         array_push($list,$inst);
         $i++;
        }
        
-       return true;
+       return RESULT_OK();
     }
     
     /*

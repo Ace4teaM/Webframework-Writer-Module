@@ -1,4 +1,5 @@
 .*
 ~*
+/doc
 /wfw-mod-article_writer-1.1.0
 !/.gitignore

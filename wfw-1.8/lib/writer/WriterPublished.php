@@ -35,12 +35,12 @@ class WriterPublished
     /**
     * @var      String
     */
-    public $writerPublishedId; // (String)
+    public $writerPublishedId;
     
     /**
     * @var      String
     */
-    public $parentIndexId; // (String)    
+    public $parentIndexId;    
 
 }
 
@@ -89,14 +89,14 @@ class WriterPublishedMgr
        
       //extrait les instances
        $i=0;
-       while($result->seek($i)){
+       while( $result->seek($i,iDatabaseQuery::Origin) ){
         $inst = new WriterPublished();
         WriterPublishedMgr::bindResult($inst,$result);
         array_push($list,$inst);
         $i++;
        }
        
-       return true;
+       return RESULT_OK();
     }
     
     /*

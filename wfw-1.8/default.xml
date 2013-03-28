@@ -10,6 +10,7 @@
         <!-- admin -->
         <page id="create" role="administrator" name="Créer un document">index.php?page=create</page>
         <page id="write" role="administrator" name="Editer un document">index.php?page=write</page>
+        <page id="list" role="administrator" name="Liste les documents">index.php?page=list</page>
         <!-- visiteur -->
         <page id="view" role="visitor" name="Afficher un document">view.php</page>
         <!-- utilisateur -->
@@ -65,9 +66,9 @@
             <!-- **************************************************************
                    Webframework
             ************************************************************** -->
-            <INPUT_INVALID_FIELD>
+            <MISSING_FIELD>
                 Merci de renseigner le champ: $FIELD_NAME.
-            </INPUT_INVALID_FIELD>
+            </MISSING_FIELD>
             <SOCK_SERVER_CONNECTION>
                 Cause retourné par le socket #$ERRNO : $ERRSTR
             </SOCK_SERVER_CONNECTION>

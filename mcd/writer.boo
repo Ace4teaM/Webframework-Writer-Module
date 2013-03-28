@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{3596BE68-1E14-4DA5-AFB9-FDE08A075759}" Label="" LastModificationDate="1364392624" Name="writer" Objects="17" Symbols="3" Target="PHP (WFW)" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{3596BE68-1E14-4DA5-AFB9-FDE08A075759}" Label="" LastModificationDate="1364399717" Name="writer" Objects="17" Symbols="3" Target="PHP (WFW)" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>WRITER</a:Code>
 <a:CreationDate>1364390778</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:History>ORG {11DB295D-6A1D-4145-ADC8-546DD759EF61}
 DAT 1364390782
@@ -24,7 +24,19 @@ DLD {2E1570B2-6246-4294-96AB-9A9435217AD0}
 DLD {61EDFB49-CD1F-46FB-B5E2-D3722995D0D2}
 DLD {AC9E3817-D802-4CD2-BE9B-29DA222E1E66}
 DLD {06FE4F06-8D0C-4780-AAEB-FCFF50AD3164}
-DLD {A3905852-9B70-4FC9-8CE7-4DEEA39AEDBD}</a:History>
+DLD {A3905852-9B70-4FC9-8CE7-4DEEA39AEDBD}
+DLD {4DDA4A33-3BFE-4EAF-B688-4A265B022BD3}
+DLD {489186A5-C883-45FB-8C31-8A6EB860CB9E}
+DLD {70ED85D8-552B-4792-B086-5431631B6FAD}
+DLD {514182A8-242D-4D2C-9841-55B35F8F29F3}
+DLD {5DAEE07F-8ACD-44E7-A3FD-EF923619AC49}
+DLD {20A55923-73B8-4287-93B7-61AFE1A34A8B}
+DLD {FD5565CB-4DFD-4E46-8741-E24D3A0B8B32}
+DLD {C6879F4D-0F54-40D7-8805-017A3DF78951}
+DLD {9C611E34-6AAF-4421-83EF-E8D2690F5091}
+DLD {A9465798-28D3-496F-966B-52B9338CDCF0}
+DLD {61F77D7C-8B34-4411-812B-B42482C5BF8A}
+DLD {B6EE046A-2F43-40A3-A118-F302991CE01C}</a:History>
 <a:PackageOptionsText>[FolderOptions]
 
 [FolderOptions\Class Diagram Objects]
@@ -2054,9 +2066,9 @@ NameToCode=No</a:ModelOptionsText>
 <a:ObjectID>9FDB327E-361E-4A66-AF37-24363D799058</a:ObjectID>
 <a:Name>writer</a:Name>
 <a:Code>WRITER</a:Code>
-<a:CreationDate>1364392624</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392624</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:TargetStereotype/>
 <a:TargetID>11DB295D-6A1D-4145-ADC8-546DD759EF61</a:TargetID>
@@ -2079,19 +2091,19 @@ NameToCode=No</a:ModelOptionsText>
 </c:ObjectLanguage>
 <c:ClassDiagrams>
 <o:ClassDiagram Id="o5">
-<a:ObjectID>25E63799-5FB8-4582-B699-FAC902B8F92F</a:ObjectID>
+<a:ObjectID>8C6584CD-66DA-4C97-86C7-64C7F03AA361</a:ObjectID>
 <a:Name>Diagramme_1</a:Name>
 <a:Code>DIAGRAMME_1</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {4DDA4A33-3BFE-4EAF-B688-4A265B022BD3}
-DAT 1364392623
-ORG {53EEF888-E03E-47A5-8F13-B0192E221105}
-DAT 1364392021
+<a:History>ORG {B2325EA1-A305-45FF-BEF3-AB49584C83A7}
+DAT 1364399717
+ORG {1778EE49-D171-4780-A199-43C9C9C141AD}
+DAT 1364399710
 ORG {CDF1E6A2-1FD0-4F7A-981D-B18DB9303969}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\CLD]
@@ -3038,8 +3050,8 @@ Shadow=0
 <a:PaperSource>276</a:PaperSource>
 <c:Symbols>
 <o:AssociationSymbol Id="o6">
-<a:Rect>((-13334,-1389), (10575,12260))</a:Rect>
-<a:ListOfPoints>((10575,12260),(-11497,12260),(-11497,-1389))</a:ListOfPoints>
+<a:Rect>((-16072,-2139), (1387,11810))</a:Rect>
+<a:ListOfPoints>((-600,11810),(-600,-2139),(-16072,-2139))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -3058,7 +3070,7 @@ MULA 0 Arial,8,N</a:FontList>
 </o:AssociationSymbol>
 <o:ClassSymbol Id="o7">
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((4409,8889), (16741,15631))</a:Rect>
+<a:Rect>((-6766,8439), (5566,15181))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>11184640</a:LineColor>
 <a:FillColor>16777136</a:FillColor>
@@ -3080,7 +3092,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:ClassSymbol>
 <o:ClassSymbol Id="o8">
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-17625,-3786), (-5369,1008))</a:Rect>
+<a:Rect>((-22200,-4536), (-9944,258))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>11184640</a:LineColor>
 <a:FillColor>16777136</a:FillColor>
@@ -3108,55 +3120,55 @@ LABL 0 Arial,8,N</a:FontList>
 </c:DefaultDiagram>
 <c:Classes>
 <o:Class Id="o10">
-<a:ObjectID>A7AF5064-D5DC-468B-BD8B-E2F5978149A3</a:ObjectID>
-<a:Name>writer document</a:Name>
+<a:ObjectID>4071AF88-A2A2-4EAF-A414-5089E3A009F0</a:ObjectID>
+<a:Name>writer_document</a:Name>
 <a:Code>WriterDocument</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {489186A5-C883-45FB-8C31-8A6EB860CB9E}
-DAT 1364392623
-ORG {2BB587AB-A9C5-4ED6-8EB7-0EC968E8F3F6}
-DAT 1364392021
+<a:History>ORG {61C0B538-54C8-4F31-819B-CE0024293D73}
+DAT 1364399717
+ORG {5C702A3C-CEBB-40CC-9337-8AA69C358988}
+DAT 1364399710
 ORG {91C40DC9-DAC2-42F5-BC9F-5F9D306E0FE2}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:PersistentCode>WRITER_DOCUMENT</a:PersistentCode>
 <c:Attributes>
 <o:Attribute Id="o12">
-<a:ObjectID>F1ABDEEE-4D7A-4CF0-B655-D68191B84A45</a:ObjectID>
+<a:ObjectID>444CA8D0-DDF6-4830-8903-B9E49D7431A1</a:ObjectID>
 <a:Name>writer_document_id</a:Name>
 <a:Code>writerDocumentId</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {FD5565CB-4DFD-4E46-8741-E24D3A0B8B32}
-DAT 1364392623
-ORG {CBD1ED24-BF67-4AB6-9128-E0B9B8AF1476}
-DAT 1364392021
+<a:History>ORG {39C8EC08-AD49-43A0-A6C8-A21195E75A4C}
+DAT 1364399717
+ORG {552DE453-73C8-4F55-9DDC-25828E6F2579}
+DAT 1364399710
 ORG {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DataType>int</a:DataType>
 <a:PersistentDataType>I</a:PersistentDataType>
 <a:PersistentCode>WRITER_DOCUMENT_ID</a:PersistentCode>
 <a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
 <o:Attribute Id="o13">
-<a:ObjectID>1969462F-4554-4745-8395-2F62FD7F8CD6</a:ObjectID>
+<a:ObjectID>1C3DC9AB-5B9F-481E-B56A-16905E72E484</a:ObjectID>
 <a:Name>doc_title</a:Name>
 <a:Code>docTitle</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {20A55923-73B8-4287-93B7-61AFE1A34A8B}
-DAT 1364392623
-ORG {BB5CE798-135F-443C-B3B4-1402A523860C}
-DAT 1364392021
+<a:History>ORG {592B632C-BA6C-497F-B088-9199C3CE9E29}
+DAT 1364399717
+ORG {3EE18CCF-1EED-44E1-94B9-770AF0FF48F9}
+DAT 1364399710
 ORG {F76B2A55-D9B0-4853-9563-96D22ED47B79}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DataType>String</a:DataType>
 <a:PersistentDataType>VA256</a:PersistentDataType>
 <a:PersistentLength>256</a:PersistentLength>
@@ -3164,19 +3176,19 @@ DAT 1364392016</a:History>
 <a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
 <o:Attribute Id="o14">
-<a:ObjectID>9B5D41FF-4684-41B3-B8F8-3CCF2906DCA1</a:ObjectID>
+<a:ObjectID>5832EE37-1973-476A-BBE2-81D54B3B2ECB</a:ObjectID>
 <a:Name>content_type</a:Name>
 <a:Code>contentType</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {5DAEE07F-8ACD-44E7-A3FD-EF923619AC49}
-DAT 1364392623
-ORG {71F27177-6CCA-4491-952D-D7A00800FA6E}
-DAT 1364392021
+<a:History>ORG {ABF24F3F-C36E-4F89-9036-0ECAD5CC619E}
+DAT 1364399717
+ORG {8480C0BE-B060-4424-A676-BA22394228FB}
+DAT 1364399710
 ORG {763B5C3A-E9DD-418A-816E-AF57E97811AC}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DataType>String</a:DataType>
 <a:PersistentDataType>VA260</a:PersistentDataType>
 <a:PersistentLength>260</a:PersistentLength>
@@ -3184,40 +3196,39 @@ DAT 1364392016</a:History>
 <a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
 <o:Attribute Id="o15">
-<a:ObjectID>9072171B-6943-4E05-81A7-E756A3336832</a:ObjectID>
+<a:ObjectID>17EFF06A-FD57-42A0-A1B8-89FF0F9AF0B1</a:ObjectID>
 <a:Name>doc_content</a:Name>
 <a:Code>docContent</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {514182A8-242D-4D2C-9841-55B35F8F29F3}
-DAT 1364392623
-ORG {230F0D3A-35B6-4A44-AFB5-8AD342319811}
-DAT 1364392021
+<a:History>ORG {475FFB8E-FDDF-4BEA-8CF7-F323B4BF9EDB}
+DAT 1364399717
+ORG {07C013E5-52E7-45B4-9172-5454619B8243}
+DAT 1364399710
 ORG {72539E7F-0E7D-46E9-80C1-FC347092F408}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DataType>String</a:DataType>
 <a:PersistentDataType>TXT</a:PersistentDataType>
 <a:PersistentCode>DOC_CONTENT</a:PersistentCode>
-<a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
 </c:Attributes>
 <c:Identifiers>
 <o:Identifier Id="o16">
-<a:ObjectID>655BBC99-CAC0-4FBF-85BE-894E5C9EF855</a:ObjectID>
+<a:ObjectID>55F74502-CDA5-4DD8-B3F6-5C143CAABCC4</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {C6879F4D-0F54-40D7-8805-017A3DF78951}
-DAT 1364392623
-ORG {7EA94797-06C2-4A1D-B280-51A016EA1E1B}
-DAT 1364392021
+<a:History>ORG {291656D4-138F-4588-8721-F05A3AC45D0E}
+DAT 1364399717
+ORG {2BE9851D-8065-4B63-AA7F-162E87509BBE}
+DAT 1364399710
 ORG {7CB5D91B-8F82-4668-9DF6-829FDF6BBDE4}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <c:Identifier.Attributes>
 <o:Attribute Ref="o12"/>
 </c:Identifier.Attributes>
@@ -3228,36 +3239,36 @@ DAT 1364392016</a:History>
 </c:PrimaryIdentifier>
 </o:Class>
 <o:Class Id="o11">
-<a:ObjectID>9B291B82-E198-423C-BBA9-3C90AA34F266</a:ObjectID>
-<a:Name>writer published</a:Name>
+<a:ObjectID>11710487-630F-49FF-B61A-999F533017F5</a:ObjectID>
+<a:Name>writer_published</a:Name>
 <a:Code>WriterPublished</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {9C611E34-6AAF-4421-83EF-E8D2690F5091}
-DAT 1364392623
-ORG {44CAB8C2-3526-4DE3-BFEE-DF60F330229F}
-DAT 1364392021
+<a:History>ORG {B50B2420-B255-4B88-82C5-E7A0214B3F8D}
+DAT 1364399717
+ORG {FB851620-8BDF-4E32-8D5F-27B145EFD6D9}
+DAT 1364399710
 ORG {9FCCED22-8267-4B1F-8C52-25C1D5319851}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:PersistentCode>WRITER_PUBLISHED</a:PersistentCode>
 <c:Attributes>
 <o:Attribute Id="o17">
-<a:ObjectID>4CD618C2-B6FA-4217-B88E-1676617FB8AA</a:ObjectID>
+<a:ObjectID>06F920D0-B107-4853-BA23-9F922D21B90F</a:ObjectID>
 <a:Name>writer_published_id</a:Name>
 <a:Code>writerPublishedId</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {61F77D7C-8B34-4411-812B-B42482C5BF8A}
-DAT 1364392623
-ORG {AA713A26-8D76-43CB-911D-F7CF7A4B09CF}
-DAT 1364392021
+<a:History>ORG {D5832C77-B0B1-4E2C-94A5-E2F5C8C0C811}
+DAT 1364399717
+ORG {2D47FA9D-9182-4CCB-991F-BBDDA32727CA}
+DAT 1364399710
 ORG {9ADD8539-EDB2-4523-837A-14FD6B2CE9A8}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DataType>String</a:DataType>
 <a:PersistentDataType>VA160</a:PersistentDataType>
 <a:PersistentLength>160</a:PersistentLength>
@@ -3265,19 +3276,19 @@ DAT 1364392016</a:History>
 <a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
 <o:Attribute Id="o18">
-<a:ObjectID>43752F8E-AF6C-4A20-801E-8A6CBD8A72E3</a:ObjectID>
+<a:ObjectID>DA6B061F-DF0D-4DFB-888A-B4235C804B6C</a:ObjectID>
 <a:Name>parent_index_id</a:Name>
 <a:Code>parentIndexId</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {A9465798-28D3-496F-966B-52B9338CDCF0}
-DAT 1364392623
-ORG {9B27BA0D-E8A9-4CC1-B2B1-7546BFF1C723}
-DAT 1364392021
+<a:History>ORG {77BCF734-C6A5-4B53-AC29-5AB5D8C4721E}
+DAT 1364399717
+ORG {C6331F9B-42F5-4F79-A5F0-357C62E14E37}
+DAT 1364399710
 ORG {FF6D3499-5884-41C6-B3C4-FBDC5A661CBC}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:DataType>String</a:DataType>
 <a:PersistentDataType>VA160</a:PersistentDataType>
 <a:PersistentLength>160</a:PersistentLength>
@@ -3286,19 +3297,19 @@ DAT 1364392016</a:History>
 </c:Attributes>
 <c:Identifiers>
 <o:Identifier Id="o19">
-<a:ObjectID>AB10129D-2B2F-4C23-86B5-AA4FFEA9D8CC</a:ObjectID>
+<a:ObjectID>9EB51650-5DDC-4617-806B-7EFD8B363618</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {B6EE046A-2F43-40A3-A118-F302991CE01C}
-DAT 1364392623
-ORG {561B80CF-0FDC-4446-9943-C18C6C58FB5E}
-DAT 1364392021
+<a:History>ORG {75943C54-8D7E-484B-8F4F-20A37E888493}
+DAT 1364399717
+ORG {5741E31A-3468-44CB-A230-4198C1F1C0BC}
+DAT 1364399710
 ORG {9AB79603-F4BE-4EB9-8BA6-F5F0A4731BF3}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <c:Identifier.Attributes>
 <o:Attribute Ref="o17"/>
 </c:Identifier.Attributes>
@@ -3311,19 +3322,19 @@ DAT 1364392016</a:History>
 </c:Classes>
 <c:Associations>
 <o:Association Id="o9">
-<a:ObjectID>EDB2C098-CA03-4172-B6D6-D911263652CB</a:ObjectID>
+<a:ObjectID>95EBC0C6-B6CE-4F36-95E2-F285939C7566</a:ObjectID>
 <a:Name>writer Publish</a:Name>
 <a:Code>WRITER_PUBLISH</a:Code>
-<a:CreationDate>1364392623</a:CreationDate>
+<a:CreationDate>1364399717</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392623</a:ModificationDate>
+<a:ModificationDate>1364399717</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {70ED85D8-552B-4792-B086-5431631B6FAD}
-DAT 1364392623
-ORG {63BA8FF5-F982-45FA-85E3-11D1E0D61307}
-DAT 1364392021
+<a:History>ORG {E3EBC644-EB2B-4F84-AE29-BE19DFEBEB46}
+DAT 1364399717
+ORG {315712CC-5667-45C9-9BC7-9391C3294673}
+DAT 1364399710
 ORG {CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}
-DAT 1364392016</a:History>
+DAT 1364399707</a:History>
 <a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:RoleANavigability>1</a:RoleANavigability>
