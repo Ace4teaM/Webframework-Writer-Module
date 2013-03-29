@@ -37,201 +37,282 @@ Ext.define('MyApp.Writer.Html', {});
 // Initialise le layout
 //
 /*------------------------------------------------------------------------------------------------------------------*/
-MyApp.Writer.Html.onInitEditorLayout_ = function(Y){
+MyApp.Writer.Html.onInit = function(Y){
+    var wfw = Y.namespace("wfw");
     var g = MyApp.global.Vars;
+    
+    /*------------------------------------------------------------------------------------------------------------------*/
+    //
+    // Ouvre un document est retourne son contenu
+    //
+    /*------------------------------------------------------------------------------------------------------------------*/
+    Ext.define('MyApp.Writer.Html.Editor', {
+        name: 'Unknown',
+        extend: 'Ext.panel.Panel',
+
+        config:{
+            autoScroll:false,
+            title:"Editeur HTML",
+            border:false,
+            bodyPadding:6,
+            closeAction:'destroy',
+            items:[],
+            tbar: []
+        },
+
+        constructor: function(config) {
+            var obj=this;
+            this.newBtn = Ext.create('Ext.Button',{
+                  text: 'Nouveau',
+                  iconCls: 'wfw_icon new',
+                  handler:function(){
+                      var wnd = MyApp.Writer.Html.createDialog(Y,function(data){
+                          Ext.getCmp('writer_document_id').setValue(data.writer_document_id);
+                          Ext.getCmp('doc_content').setValue("");
+                          Ext.getCmp('doc_title').setValue(data.doc_title);
+                          MyApp.Writer.Html.unlockLayout();
+                      });
+                      wnd.show();
+                  }
+             });
+            this.openBtn = Ext.create('Ext.Button',{
+                    text: 'Ouvrir',
+                    iconCls: 'wfw_icon open',
+                    handler:function(){
+                        var wnd = Ext.create('MyApp.Writer.OpenDialog',{
+                            title:'Ouvrir un document HTML...',
+                            filter_type:'text/html',
+                            callback:function(data){
+                                obj.docIdField.setValue(data.writer_document_id);
+                                obj.docContentField.setValue(data.doc_content);
+                                obj.docTitleField.setValue(data.doc_title);
+                                obj.unlockLayout();
+                            }
+                        });
+                        wnd.show();
+                    }
+               });
+            this.saveBtn = Ext.create('Ext.Button',{
+                 text: 'Sauvegarder',
+                 iconCls: 'wfw_icon save',
+                 handler:function(){
+                    // appel le controleur
+                    wfw.Request.Add(null,wfw.Navigator.getURI("write"),
+                        {
+                            output:'xml',
+                            writer_document_id : Ext.getCmp('writer_document_id').value,
+                            doc_content : Ext.getCmp('doc_content').value
+                        },
+                        wfw.Xml.onCheckRequestResult,
+                        {
+                            onsuccess:function(req,doc,root){
+                                MyApp.showResultToMsg(wfw.Result.fromXML(root));
+                            },
+                            onfailed:function(req,doc,root){
+                                MyApp.showResultToMsg(wfw.Result.fromXML(root));
+                            }
+                        },
+                        false
+                    );
+                 }
+            });
+            this.printBtn = Ext.create('Ext.Button',{
+                 text: 'Imprimer',
+                 iconCls: 'wfw_icon print',
+                handler:function(){
+                    var uri = wfw.URI.remakeURI(wfw.Navigator.getURI('view'),{
+                        writer_document_id : Ext.getCmp('writer_document_id').value
+                    });
+                    window.open(uri, 'view').print();
+                }
+            });
+            this.publishBtn = Ext.create('Ext.Button',{
+                 text: 'Publier',
+                 iconCls: 'wfw_icon publish'
+            });
+            this.showBtn = Ext.create('Ext.Button',{
+                text: 'Afficher dans le navigateur',
+                iconCls: 'wfw_icon view',
+                handler:function(){
+                   var uri = wfw.URI.remakeURI(wfw.Navigator.getURI('view'),{
+                       writer_document_id : Ext.getCmp('writer_document_id').value
+                   });
+                   window.open(uri, 'view');
+                }
+            });
+
+            //content
+            this.docIdField = Ext.create('Ext.form.field.Hidden',{
+                name:'writer_document_id'
+            });
+            this.config.items.push(this.docIdField);
+            this.config.items.push({
+                border:false,
+                html:'Titre :',
+                bodyPadding:6
+            });
+            this.docTitleField = Ext.create('Ext.form.field.Text',{
+                name:'doc_title'
+            });
+            this.config.items.push(this.docTitleField);
+            this.config.items.push({
+                border:false,
+                html:'Contenu :',
+                bodyPadding:6
+            });
+            this.docContentField = Ext.create('Ext.form.field.HtmlEditor',{
+                xtype: 'htmleditor',
+                name:'doc_content',
+                flex:1,
+                autoScroll:true
+            });
+            this.config.items.push(this.docContentField);
+
+            //Toolbar
+            this.config.tbar.push(this.newBtn);
+            this.config.tbar.push('-');
+            this.config.tbar.push(this.openBtn);
+            this.config.tbar.push('-');
+            this.config.tbar.push(this.saveBtn);
+            this.config.tbar.push(this.publishBtn);
+            this.config.tbar.push(this.printBtn);
+            this.config.tbar.push('->');
+            this.config.tbar.push(this.showBtn);
+
+            this.superclass.constructor.call(this,object_merge(this.config,config,false));
+            return this;
+        },
+
+        newBtn:null,
+        openBtn:null,
+        saveBtn:null,//Ext.create('Ext.Button'),
+        publishBtn:null,
+        printBtn:null,
+        showBtn:null,
+
+        docIdField:null,
+        docTitleField:null,
+        docContentField:null,
+    /*
+        constructor: function(docId) {
+            this.docTitleField = Ext.create({
+                xtype: 'textfield'
+            });
+            /*this.docContentField = Ext.create({
+                xtype: 'htmleditor',
+                flex:1,
+                autoScroll:true
+            });
+            /*if (docId) {
+                this.loadDoc(docId);
+            }
+        },*/
+
+        lockLayout : function(){
+            this.saveBtn.disable();
+            this.publishBtn.disable();
+            this.printBtn.disable();
+            this.showBtn.disable();
+            this.docTitleField.disable();
+            this.docContentField.disable();
+        },
+
+        unlockLayout : function(){
+            this.saveBtn.enable();
+            //this.publishBtn.enable();
+            this.printBtn.enable();
+            this.showBtn.enable();
+            this.docTitleField.enable();
+            this.docContentField.enable();
+        }
+        
+
+    });
+
+    /*------------------------------------------------------------------------------------------------------------------*/
+    //
+    // Ouvre le dialogue de création d'un document
+    //
+    /*------------------------------------------------------------------------------------------------------------------*/
+
+    MyApp.Writer.Html.createDialog = function(Y,callback){
+        var wfw = Y.namespace("wfw");
+        var g = MyApp.global.Vars;
+
+        var form = Ext.create('Ext.form.Panel', {
+            defaults:{
+                width:'100%'
+            },
+            bodyPadding:6,
+            items: [
+                MyApp.makeField(Y,'doc_title','string')
+            ]
+        });
+
+       //dialogue
+        var wnd = Ext.create('widget.window', {
+            title: 'Nouveau',
+            closable: true,
+            width: 600,
+            height: 350,
+            layout:'fit',
+            bodyStyle: 'padding: 5px;',
+            modal:true,
+            items: form,
+            buttons: [
+                {
+                    text:"Annuler",
+                    handler: function() {
+                        wnd.close();
+                    }
+                },
+                '->',
+                {
+                    text:"Créer",
+                    handler: function() {
+                        //appel le controleur
+                        wfw.Request.Add(null,wfw.Navigator.getURI("create"),
+                            object_merge({
+                                output:'xarg',
+                                content_type:'text/html'
+                            },form.getValues(),false),
+                            wfw.XArg.onCheckRequestResult_XARG,
+                            {
+                                onsuccess:function(req,args){
+                                    callback(args);
+                                    MyApp.showResultToMsg(wfw.Result.fromXArg(args));
+                                },
+                                onfailed:function(req,args){
+                                    MyApp.showResultToMsg(wfw.Result.fromXArg(args));
+                                }
+                            },
+                            false
+                        );
+
+                        //initialise l'interface
+                        wnd.close();
+                    }
+                }
+            ]
+        });
+
+        return wnd;
+    };
+    
+}
+
+MyApp.Writer.Html.onInitEditorLayout = function(Y){
+    var wfw = Y.namespace("wfw");
+    var g = MyApp.global.Vars;
+    
     var editor = Ext.create('MyApp.Writer.Html.Editor', {layout:'vbox'});
     //var editor = Ext.create('Ext.panel.Panel');
 
     g.contentPanel.removeAll();
     g.contentPanel.add(editor);
 }
-Ext.onReady(function(){
-Ext.define('MyApp.Writer.Html.Editor', {
-    name: 'Unknown',
-    extend: 'Ext.panel.Panel',
 
-    config:{
-        autoScroll:false,
-        title:"Editeur HTML",
-        border:false,
-        bodyPadding:6,
-        items:[],
-        tbar: []
-    },
-    
-    constructor: function(config) {
-        var obj=this;
-        this.newBtn = Ext.create('Ext.Button',{
-              id: 'newBtn',
-              text: 'Nouveau',
-              iconCls: 'wfw_icon new',
-              handler:function(){
-                  MyApp.Writer.Html.createDialog(Y,function(data){
-                      Ext.getCmp('writer_document_id').setValue(data.writer_document_id);
-                      Ext.getCmp('doc_content').setValue("");
-                      Ext.getCmp('doc_title').setValue(data.doc_title);
-                      MyApp.Writer.Html.unlockLayout();
-                  });
-              }
-         });
-        this.openBtn = Ext.create('Ext.Button',{
-                id: 'openBtn',
-                text: 'Ouvrir',
-                iconCls: 'wfw_icon open',
-                handler:function(){
-                    obj.openDialog(Y,function(dataModel){
-                        wfw.puts(dataModel.getAssociatedData());
-                        obj.docIdField.setValue(dataModel.get("writer_document_id"));
-                        obj.docContentField.setValue(dataModel.get("doc_content"));
-                        obj.docTitleField.setValue(dataModel.get("doc_title"));
-                        obj.unlockLayout();
-                    });
-                }
-           });
-        this.saveBtn = Ext.create('Ext.Button',{
-             id: 'saveBtn',
-             text: 'Sauvegarder',
-             iconCls: 'wfw_icon save',
-             handler:function(){
-                // appel le controleur
-                wfw.Request.Add(null,wfw.Navigator.getURI("write"),
-                    {
-                        output:'xml',
-                        writer_document_id : Ext.getCmp('writer_document_id').value,
-                        doc_content : Ext.getCmp('doc_content').value
-                    },
-                    wfw.Xml.onCheckRequestResult,
-                    {
-                        onsuccess:function(req,doc,root){
-                            MyApp.showResultToMsg(wfw.Result.fromXML(root));
-                        },
-                        onfailed:function(req,doc,root){
-                            MyApp.showResultToMsg(wfw.Result.fromXML(root));
-                        }
-                    },
-                    false
-                );
-             }
-        });
-        this.printBtn = Ext.create('Ext.Button',{
-             id: 'printBtn',
-             text: 'Imprimer',
-             iconCls: 'wfw_icon print',
-            handler:function(){
-                var uri = wfw.URI.remakeURI(wfw.Navigator.getURI('view'),{
-                    writer_document_id : Ext.getCmp('writer_document_id').value
-                });
-                window.open(uri, 'view').print();
-            }
-        });
-        this.publishBtn = Ext.create('Ext.Button',{
-             id: 'publishBtn',
-             text: 'Publier',
-             iconCls: 'wfw_icon publish'
-        });
-        this.showBtn = Ext.create('Ext.Button',{
-            id: 'showBtn',
-            text: 'Afficher dans le navigateur',
-            iconCls: 'wfw_icon view',
-            handler:function(){
-               var uri = wfw.URI.remakeURI(wfw.Navigator.getURI('view'),{
-                   writer_document_id : Ext.getCmp('writer_document_id').value
-               });
-               window.open(uri, 'view');
-            }
-        });
-        
-        //content
-        this.docIdField = Ext.create('Ext.form.field.Hidden',{
-            id:'writer_document_id',
-            name:'writer_document_id'
-        });
-        this.config.items.push(this.docIdField);
-        this.config.items.push({
-            border:false,
-            html:'Titre :',
-            bodyPadding:6
-        });
-        this.docTitleField = Ext.create('Ext.form.field.Text',{
-            id:'doc_title',
-            name:'doc_title'
-        });
-        this.config.items.push(this.docTitleField);
-        this.config.items.push({
-            border:false,
-            html:'Contenu :',
-            bodyPadding:6
-        });
-        this.docContentField = Ext.create('Ext.form.field.HtmlEditor',{
-            xtype: 'htmleditor',
-            id:'doc_content',
-            name:'doc_content',
-            flex:1,
-            autoScroll:true
-        });
-        this.config.items.push(this.docContentField);
-        
-        //Toolbar
-        this.config.tbar.push(this.newBtn);
-        this.config.tbar.push('-');
-        this.config.tbar.push(this.openBtn);
-        this.config.tbar.push('-');
-        this.config.tbar.push(this.saveBtn);
-        this.config.tbar.push(this.publishBtn);
-        this.config.tbar.push(this.printBtn);
-        this.config.tbar.push('->');
-        this.config.tbar.push(this.showBtn);
-        
-        this.superclass.constructor.call(this,config);
-        return this;
-    },
-
-    newBtn:null,
-    openBtn:null,
-    saveBtn:null,//Ext.create('Ext.Button'),
-    publishBtn:null,
-    printBtn:null,
-    showBtn:null,
-    
-    docIdField:null,
-    docTitleField:null,
-    docContentField:null,
-/*
-    constructor: function(docId) {
-        this.docTitleField = Ext.create({
-            xtype: 'textfield'
-        });
-        /*this.docContentField = Ext.create({
-            xtype: 'htmleditor',
-            flex:1,
-            autoScroll:true
-        });
-        /*if (docId) {
-            this.loadDoc(docId);
-        }
-    },*/
-
-    lockLayout : function(){
-        this.saveBtn.disable();
-        this.publishBtn.disable();
-        this.printBtn.disable();
-        this.showBtn.disable();
-        this.docTitle.disable();
-        this.docContent.disable();
-    },
-
-    unlockLayout : function(){
-        this.saveBtn.enable();
-        //this.publishBtn.enable();
-        this.printBtn.enable();
-        this.showBtn.enable();
-        this.docTitle.enable();
-        this.docContent.enable();
-    }
-});
-});
-
-MyApp.Writer.Html.onInitEditorLayout = function(Y){
+MyApp.Writer.Html.onInitEditorLayout_ = function(Y){
 
     var wfw = Y.namespace("wfw");
     var g = MyApp.global.Vars;
@@ -546,4 +627,5 @@ MyApp.Writer.Html.createDialog = function(Y,callback){
 };
 
 //ajoute la fonction a l'initialisation de l'application'
+MyApp.Loading.callback_list.push( MyApp.Writer.Html.onInit );
 MyApp.Loading.callback_list.push( MyApp.Writer.Html.onInitEditorLayout );
