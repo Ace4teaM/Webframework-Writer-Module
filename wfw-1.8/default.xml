@@ -11,13 +11,14 @@
         <page id="create" role="administrator" name="Créer un document">index.php?page=create</page>
         <page id="write" role="administrator" name="Editer un document">index.php?page=write</page>
         <page id="list" role="administrator" name="Liste les documents">index.php?page=list</page>
+        <page id="publish" role="administrator" name="Publier un document">index.php?page=publish</page>
         <!-- visiteur -->
         <page id="view" role="visitor" name="Afficher un document">view.php</page>
         <!-- utilisateur -->
     </index>
 
     <tree>
-        <index/>
+        <index></index>
         <create/>
     </tree>
     
@@ -93,6 +94,10 @@
             <doc_title>Titre du document</doc_title>
             <doc_content>Contenu du document</doc_content>
             <content_type>Type de contenu (mime-type)</content_type>
+            <parent_page_id>Page parent</parent_page_id>
+            <set_default_file_page_entry>Définir la page dans l'index du site</set_default_file_page_entry>
+            <show_doc_after_publish>Afficher le document après publication</show_doc_after_publish>
+            <page_id>Page</page_id>
         </fields>
         
     </results>

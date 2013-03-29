@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{A6A454FB-C3AB-44D4-9B56-7284110D6EBB}" Label="" LastModificationDate="1364397237" Name="writer" Objects="19" Symbols="12" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" signature="LDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{A6A454FB-C3AB-44D4-9B56-7284110D6EBB}" Label="" LastModificationDate="1364399707" Name="writer" Objects="19" Symbols="3" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" signature="LDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>WRITER</a:Code>
 <a:CreationDate>1364390745</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:History>ORG {11DB295D-6A1D-4145-ADC8-546DD759EF61}
 DAT 1364397237
@@ -33,7 +33,20 @@ DLD {9AB79603-F4BE-4EB9-8BA6-F5F0A4731BF3}
 DLD {FF6D3499-5884-41C6-B3C4-FBDC5A661CBC}
 DLD {9ADD8539-EDB2-4523-837A-14FD6B2CE9A8}
 ATT MOPT
-DLD {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE},{CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}</a:History>
+DLD {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE},{CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}
+DLD {0FF6798D-1E11-41AC-962E-CB46FC39F34F}
+DLD {3A357160-F8A5-4DC4-A1F4-66AE650BDDD8}
+DLD {4F14CF71-988C-454A-BCDB-1EA40D5E6C25}
+DLD {ED7CBB51-CA2F-4AF5-9B12-7C5F91EC2768}
+DLD {3B7A87A8-2958-4224-87DF-45B8EDAB1467}
+DLD {8DED81C6-BA10-4D60-8E64-DC4AB42C33D0}
+DLD {6E291CE3-D33E-4D88-A7A2-DFE9E66CECF1}
+DLD {4D9FC785-2A22-4CD2-949E-8EF159BD3396}
+DLD {716191FA-E5F4-45F5-9FE5-1A0854A63A5F}
+DLD {8E79C323-34D7-4C44-A567-9232D22BDC1D}
+DLD {95E01980-2FA9-49F0-AF22-E3545F29D339}
+DLD {63066360-1FF3-49A4-8394-1675259734E6}
+DLD {CBCBD84D-5499-420C-82AA-C3769AB27502}</a:History>
 <a:PackageOptionsText>[FolderOptions]
 
 [FolderOptions\Common]
@@ -704,33 +717,29 @@ PreserveMode=No</a:ModelOptionsText>
 </c:GeneratedModels>
 <c:GenerationOrigins>
 <o:Shortcut Id="o4">
-<a:ObjectID>A9E167C6-F070-4975-B0CD-5D1D31B3FFB5</a:ObjectID>
+<a:ObjectID>7FD3ABB0-366C-4263-964D-59FBCAA13CCC</a:ObjectID>
 <a:Name>writer</a:Name>
 <a:Code>WRITER</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:TargetStereotype/>
-<a:TargetID>11DB295D-6A1D-4145-ADC8-546DD759EF61</a:TargetID>
-<a:TargetClassID>CDE44E21-9669-11D1-9914-006097355D9B</a:TargetClassID>
+<a:TargetID>F9EAB799-0EF6-464A-9F38-6CBB5C1CA1B1</a:TargetID>
+<a:TargetClassID>1E597170-9350-11D1-AB3C-0020AF71E433</a:TargetClassID>
 </o:Shortcut>
 </c:GenerationOrigins>
 <c:LogicalDiagrams>
 <o:LogicalDiagram Id="o5">
-<a:ObjectID>67D44111-4AE0-48C9-8558-A9F855F02C45</a:ObjectID>
+<a:ObjectID>1778EE49-D171-4780-A199-43C9C9C141AD</a:ObjectID>
 <a:Name>Diagramme_1</a:Name>
 <a:Code>DIAGRAMME_1</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {0FF6798D-1E11-41AC-962E-CB46FC39F34F}
-DAT 1364397237
-ORG {C25210F4-3122-4CD9-BECD-EDA56705C1BC}
-DAT 1364394762
-ORG {CDF1E6A2-1FD0-4F7A-981D-B18DB9303969}
-DAT 1364394758</a:History>
+<a:History>ORG {CDF1E6A2-1FD0-4F7A-981D-B18DB9303969}
+DAT 1364399707</a:History>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\LDM]
@@ -812,56 +821,6 @@ Inheritance.IconPicture=No
 Inheritance_SymbolLayout=
 EnttStrn=Yes
 EnttCmmt=No
-PckgShowStrn=Yes
-Table.Stereotype=Yes
-Table.DisplayName=Yes
-Table.OwnerDisplayName=No
-Table.Columns=Yes
-Table.Columns._Filter=&quot;Tous les colonnes&quot; PDMCOLNALL
-Table.Columns._Columns=Stereotype DataType KeyIndicator
-Table.Columns._Limit=-5
-Table.Keys=No
-Table.Keys._Columns=Stereotype Indicator
-Table.Indexes=No
-Table.Indexes._Columns=Stereotype
-Table.Triggers=No
-Table.Triggers._Columns=Stereotype
-Table.Comment=No
-Table.IconPicture=No
-Table_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Propriétaire et nom&quot; Attribute=&quot;OwnerDisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Colonnes&quot; Collection=&quot;Columns&quot; Columns=&quot;Stereotype No\r\nDisplayName Yes\r\nDataType No\r\nSymbolDataType No &amp;quot;Domaine ou type de données&amp;quot;\r\nDomain No\r\nKeyIndicator No\r\nIndexIndicator No\r\nNullStatus No&quot; Filters=&quot;&amp;quot;Tous les colonnes&amp;quot;  PDMCOLNALL &amp;quot;&amp;quot;\r\n&amp;quot;Colonnes de clé primaire&amp;quot;  PDMCOLNPK &amp;quot;PRIM \&amp;quot;TRUE\&amp;quot; TRUE&amp;quot;\r\n&amp;quot;Colonnes de clé&amp;quot;  PDMCOLNKEY &amp;quot;KEYS \&amp;quot;TRUE\&amp;quot; TRUE&amp;quot;&quot; HasLimit=&quot;Yes&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Clés&quot; Collection=&quot;Keys&quot; Columns=&quot;Stereotype No\r\nDisplayName Yes\r\nIndicator No&quot; HasLimit=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Index&quot; Collection=&quot;Indexes&quot; Columns=&quot;Stereotype No\r\nDisplayName Yes\r\nIndicator No&quot; HasLimit=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Triggers&quot; Collection=&quot;Triggers&quot; Columns=&quot;Stereotype No\r\nDisplayName Yes&quot; HasLimit=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
-View.Stereotype=Yes
-View.DisplayName=Yes
-View.OwnerDisplayName=No
-View.Columns=Yes
-View.Columns._Columns=DisplayName
-View.Columns._Limit=-5
-View.TemporaryVTables=Yes
-View.Indexes=No
-View.Comment=No
-View.IconPicture=No
-View_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Propriétaire et nom&quot; Attribute=&quot;OwnerDisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Colonnes&quot; Collection=&quot;Columns&quot; Columns=&quot;DisplayName No\r\nExpression No\r\nDataType No\r\nSymbolDataType No &amp;quot;Domaine ou type de données&amp;quot;\r\nIndexIndicator No&quot; HasLimit=&quot;Yes&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Tables&quot; Collection=&quot;TemporaryVTables&quot; Columns=&quot;Name Yes&quot; HasLimit=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardCollection Name=&quot;Index&quot; Collection=&quot;Indexes&quot; Columns=&quot;DisplayName Yes&quot; HasLimit=&quot;No&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
-Procedure.Stereotype=No
-Procedure.DisplayName=Yes
-Procedure.OwnerDisplayName=No
-Procedure.Comment=No
-Procedure.IconPicture=No
-Procedure_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;Yes&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Propriétaire et nom&quot; Attribute=&quot;OwnerDisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/ExclusiveChoice&gt;[CRLF] &lt;Separator Name=&quot;Séparateur&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Commentaire&quot; Attribute=&quot;Comment&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;LEFT&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;StandardAttribute Name=&quot;Icône&quot; Attribute=&quot;IconPicture&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Alignment=&quot;CNTR&quot; Caption=&quot;&quot; Mandatory=&quot;Yes&quot; /&gt;[CRLF]&lt;/Form&gt;
-Reference.Cardinality=No
-Reference.ImplementationType=No
-Reference.ChildRole=Yes
-Reference.Stereotype=Yes
-Reference.DisplayName=No
-Reference.ForeignKeyConstraintName=No
-Reference.JoinExpression=No
-Reference.Integrity=No
-Reference.ParentRole=Yes
-Reference_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Cardinalité&quot; Attribute=&quot;Cardinality&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Mise en oeuvre&quot; Attribute=&quot;ImplementationType&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Rôle enfant&quot; Attribute=&quot;ChildRole&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;No&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom de con&amp;amp;trainte&quot; Attribute=&quot;ForeignKeyConstraintName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;Nom de con&amp;amp;trainte&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Jointure&quot; Attribute=&quot;JoinExpression&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;Jointure&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;/ExclusiveChoice&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Intégrité référentielle&quot; Attribute=&quot;Integrity&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;Intégrité référentielle&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Rôle parent&quot; Attribute=&quot;ParentRole&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
-ViewReference.ChildRole=Yes
-ViewReference.Stereotype=Yes
-ViewReference.DisplayName=No
-ViewReference.JoinExpression=No
-ViewReference.ParentRole=Yes
-ViewReference_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Rôle enfant&quot; Attribute=&quot;ChildRole&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Centre&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stéréotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;ExclusiveChoice Name=&quot;Choix exclusif&quot; Mandatory=&quot;No&quot; Display=&quot;HorizontalRadios&quot; &gt;[CRLF]   &lt;StandardAttribute Name=&quot;Nom&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]   &lt;StandardAttribute Name=&quot;Expression de jointure&quot; Attribute=&quot;JoinExpression&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;/ExclusiveChoice&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Rôle parent&quot; Attribute=&quot;ParentRole&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 Association.IconPicture=No
 Association_SymbolLayout=
 AsscStrn=Yes
@@ -1106,188 +1065,6 @@ Pen=1 0 0 0 255
 Shadow color=192 192 192
 Shadow=0
 
-[DisplayPreferences\Symbol\PDMPCKG]
-STRNFont=Arial,8,N
-STRNFont color=0, 0, 0
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0, 0, 0
-LABLFont=Arial,8,N
-LABLFont color=0, 0, 0
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Width=4800
-Height=3600
-Brush color=255 255 192
-Fill Color=Yes
-Brush style=6
-Brush bitmap mode=12
-Brush gradient mode=65
-Brush gradient color=255 255 255
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=1 0 178 178 178
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\TABL]
-STRNFont=Arial,8,N
-STRNFont color=0, 0, 0
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0, 0, 0
-OWNRDISPNAMEFont=Arial,8,N
-OWNRDISPNAMEFont color=0, 0, 0
-ColumnsFont=Arial,8,N
-ColumnsFont color=0, 0, 0
-TablePkColumnsFont=Arial,8,U
-TablePkColumnsFont color=0, 0, 0
-TableFkColumnsFont=Arial,8,N
-TableFkColumnsFont color=0, 0, 0
-KeysFont=Arial,8,N
-KeysFont color=0, 0, 0
-IndexesFont=Arial,8,N
-IndexesFont color=0, 0, 0
-TriggersFont=Arial,8,N
-TriggersFont color=0, 0, 0
-LABLFont=Arial,8,N
-LABLFont color=0, 0, 0
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Width=4800
-Height=4000
-Brush color=178 214 252
-Fill Color=Yes
-Brush style=6
-Brush bitmap mode=12
-Brush gradient mode=65
-Brush gradient color=255 255 255
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=1 0 0 128 192
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\VIEW]
-STRNFont=Arial,8,N
-STRNFont color=0, 0, 0
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0, 0, 0
-OWNRDISPNAMEFont=Arial,8,N
-OWNRDISPNAMEFont color=0, 0, 0
-ColumnsFont=Arial,8,N
-ColumnsFont color=0, 0, 0
-TablePkColumnsFont=Arial,8,U
-TablePkColumnsFont color=0, 0, 0
-TableFkColumnsFont=Arial,8,N
-TableFkColumnsFont color=0, 0, 0
-TemporaryVTablesFont=Arial,8,N
-TemporaryVTablesFont color=0, 0, 0
-IndexesFont=Arial,8,N
-IndexesFont color=0, 0, 0
-LABLFont=Arial,8,N
-LABLFont color=0, 0, 0
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Width=4800
-Height=4000
-Brush color=208 208 255
-Fill Color=Yes
-Brush style=6
-Brush bitmap mode=12
-Brush gradient mode=65
-Brush gradient color=255 255 255
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=1 0 128 128 192
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\PROC]
-STRNFont=Arial,8,N
-STRNFont color=0, 0, 0
-DISPNAMEFont=Arial,8,N
-DISPNAMEFont color=0, 0, 0
-OWNRDISPNAMEFont=Arial,8,N
-OWNRDISPNAMEFont color=0, 0, 0
-LABLFont=Arial,8,N
-LABLFont color=0, 0, 0
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Width=4000
-Height=1000
-Brush color=255 255 192
-Fill Color=Yes
-Brush style=6
-Brush bitmap mode=12
-Brush gradient mode=65
-Brush gradient color=255 255 255
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=1 0 128 108 0
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\REFR]
-SOURCEFont=Arial,8,N
-SOURCEFont color=0, 0, 0
-CENTERFont=Arial,8,N
-CENTERFont color=0, 0, 0
-DESTINATIONFont=Arial,8,N
-DESTINATIONFont color=0, 0, 0
-Line style=1
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Brush color=255 255 255
-Fill Color=Yes
-Brush style=1
-Brush bitmap mode=12
-Brush gradient mode=0
-Brush gradient color=118 118 118
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=1 0 0 128 192
-Shadow color=192 192 192
-Shadow=0
-
-[DisplayPreferences\Symbol\VREF]
-SOURCEFont=Arial,8,N
-SOURCEFont color=0, 0, 0
-CENTERFont=Arial,8,N
-CENTERFont color=0, 0, 0
-DESTINATIONFont=Arial,8,N
-DESTINATIONFont color=0, 0, 0
-Line style=1
-AutoAdjustToText=Yes
-Keep aspect=No
-Keep center=No
-Keep size=No
-Brush color=255 255 255
-Fill Color=Yes
-Brush style=1
-Brush bitmap mode=12
-Brush gradient mode=0
-Brush gradient color=118 118 118
-Brush background image=
-Custom shape=
-Custom text mode=0
-Pen=1 0 128 128 192
-Shadow color=192 192 192
-Shadow=0
-
 [DisplayPreferences\Symbol\CDMPCKG]
 STRNFont=Arial,8,N
 STRNFont color=0, 0, 0
@@ -1435,8 +1212,6 @@ Pen=1 0 128 128 255
 Shadow color=192 192 192
 Shadow=0
 
-[DisplayPreferences\PDM]
-
 [DisplayPreferences\CDM]</a:DisplayPreferences>
 <a:PaperSize>(8268, 11693)</a:PaperSize>
 <a:PageMargins>((315,354), (433,354))</a:PageMargins>
@@ -1444,7 +1219,7 @@ Shadow=0
 <a:PaperSource>276</a:PaperSource>
 <c:Symbols>
 <o:RelationshipSymbol Id="o6">
-<a:Rect>((-16072,-2726), (2100,11810))</a:Rect>
+<a:Rect>((-16072,-2726), (2062,11810))</a:Rect>
 <a:ListOfPoints>((-600,11810),(-600,-2139),(-16072,-2139))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>4627</a:ArrowStyle>
@@ -1464,7 +1239,7 @@ NAMA 0 Arial,8,N</a:FontList>
 </o:RelationshipSymbol>
 <o:EntitySymbol Id="o7">
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-11272,8440), (10072,15180))</a:Rect>
+<a:Rect>((-11272,6525), (10072,17095))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>11184640</a:LineColor>
 <a:FillColor>16777136</a:FillColor>
@@ -1479,13 +1254,14 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
+<a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
 <o:Entity Ref="o10"/>
 </c:Object>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o8">
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-26744,-5022), (-5400,744))</a:Rect>
+<a:Rect>((-26295,-5325), (-5849,1047))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>11184640</a:LineColor>
 <a:FillColor>16777136</a:FillColor>
@@ -1500,6 +1276,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
+<a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
 <o:Entity Ref="o11"/>
 </c:Object>
@@ -1512,35 +1289,26 @@ Identifiers 0 Arial,8,N</a:FontList>
 </c:DefaultDiagram>
 <c:Entities>
 <o:Entity Id="o10">
-<a:ObjectID>BBB18C6B-05E2-44E4-9285-97FF45E73318</a:ObjectID>
+<a:ObjectID>5C702A3C-CEBB-40CC-9337-8AA69C358988</a:ObjectID>
 <a:Name>writer_document</a:Name>
 <a:Code>WRITER_DOCUMENT</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {3A357160-F8A5-4DC4-A1F4-66AE650BDDD8}
-DAT 1364397237
-ORG {00E9DDEC-BA51-4243-B61A-29A16742F341}
-DAT 1364394762
-ORG {91C40DC9-DAC2-42F5-BC9F-5F9D306E0FE2}
-DAT 1364394758
-ATT NAME</a:History>
+<a:History>ORG {91C40DC9-DAC2-42F5-BC9F-5F9D306E0FE2}
+DAT 1364399707</a:History>
 <c:Identifiers>
 <o:Identifier Id="o12">
-<a:ObjectID>9F8B5533-7797-438B-9120-770BBE586811</a:ObjectID>
+<a:ObjectID>2BE9851D-8065-4B63-AA7F-162E87509BBE</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {3B7A87A8-2958-4224-87DF-45B8EDAB1467}
-DAT 1364397237
-ORG {D8D8D744-3036-4ED6-8496-0C796465C3EA}
-DAT 1364394762
-ORG {7CB5D91B-8F82-4668-9DF6-829FDF6BBDE4}
-DAT 1364394758</a:History>
+<a:History>ORG {7CB5D91B-8F82-4668-9DF6-829FDF6BBDE4}
+DAT 1364399707</a:History>
 <c:Identifier.Attributes>
 <o:EntityAttribute Ref="o13"/>
 </c:Identifier.Attributes>
@@ -1551,106 +1319,81 @@ DAT 1364394758</a:History>
 </c:PrimaryIdentifier>
 <c:Attributes>
 <o:EntityAttribute Id="o13">
-<a:ObjectID>16C0C24B-AA81-4B5E-A2E8-09772D9F8F89</a:ObjectID>
+<a:ObjectID>552DE453-73C8-4F55-9DDC-25828E6F2579</a:ObjectID>
 <a:Name>writer_document_id</a:Name>
 <a:Code>WRITER_DOCUMENT_ID</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {716191FA-E5F4-45F5-9FE5-1A0854A63A5F}
-DAT 1364397237
-ORG {995E1F96-7B3F-4550-BF4D-B2FBE190C249}
-DAT 1364394762
-ORG {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE}
-DAT 1364394758</a:History>
+<a:History>ORG {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE}
+DAT 1364399707</a:History>
 <a:DataType>I</a:DataType>
 <a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o14">
-<a:ObjectID>9473843F-E904-42CA-B8A7-1A69812BB4D0</a:ObjectID>
+<a:ObjectID>3EE18CCF-1EED-44E1-94B9-770AF0FF48F9</a:ObjectID>
 <a:Name>doc_title</a:Name>
 <a:Code>DOC_TITLE</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {4D9FC785-2A22-4CD2-949E-8EF159BD3396}
-DAT 1364397237
-ORG {61D5E80E-9208-4C67-B9BC-0637D1D32D46}
-DAT 1364394762
-ORG {F76B2A55-D9B0-4853-9563-96D22ED47B79}
-DAT 1364394758</a:History>
+<a:History>ORG {F76B2A55-D9B0-4853-9563-96D22ED47B79}
+DAT 1364399707</a:History>
 <a:DataType>VA256</a:DataType>
 <a:Length>256</a:Length>
 <a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o15">
-<a:ObjectID>64B35EC6-BAEB-42F1-9A83-8776678F2A5B</a:ObjectID>
+<a:ObjectID>8480C0BE-B060-4424-A676-BA22394228FB</a:ObjectID>
 <a:Name>content_type</a:Name>
 <a:Code>CONTENT_TYPE</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {6E291CE3-D33E-4D88-A7A2-DFE9E66CECF1}
-DAT 1364397237
-ORG {BE387619-03F1-48FD-8B24-88FA5587CA52}
-DAT 1364394762
-ORG {763B5C3A-E9DD-418A-816E-AF57E97811AC}
-DAT 1364394758</a:History>
+<a:History>ORG {763B5C3A-E9DD-418A-816E-AF57E97811AC}
+DAT 1364399707</a:History>
 <a:DataType>VA260</a:DataType>
 <a:Length>260</a:Length>
 <a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o16">
-<a:ObjectID>61F22B5E-814A-4C2F-9207-FAAD5C8C884E</a:ObjectID>
+<a:ObjectID>07C013E5-52E7-45B4-9172-5454619B8243</a:ObjectID>
 <a:Name>doc_content</a:Name>
 <a:Code>DOC_CONTENT</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {8DED81C6-BA10-4D60-8E64-DC4AB42C33D0}
-DAT 1364397237
-ORG {CE74EA4A-ACFE-438B-B50E-5D2B3C8C9E16}
-DAT 1364394762
-ORG {72539E7F-0E7D-46E9-80C1-FC347092F408}
-DAT 1364394758</a:History>
+<a:History>ORG {72539E7F-0E7D-46E9-80C1-FC347092F408}
+DAT 1364399707</a:History>
 <a:DataType>TXT</a:DataType>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
 <o:Entity Id="o11">
-<a:ObjectID>6764C6B5-C4F8-4FD8-9E59-18B4CA11FCB9</a:ObjectID>
+<a:ObjectID>FB851620-8BDF-4E32-8D5F-27B145EFD6D9</a:ObjectID>
 <a:Name>writer_published</a:Name>
 <a:Code>WRITER_PUBLISHED</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {8E79C323-34D7-4C44-A567-9232D22BDC1D}
-DAT 1364397237
-ORG {FF1FA9C2-FAB6-48A3-953E-0C07C6979D64}
-DAT 1364394762
-ORG {9FCCED22-8267-4B1F-8C52-25C1D5319851}
-DAT 1364394758
-ATT NAME</a:History>
+<a:History>ORG {9FCCED22-8267-4B1F-8C52-25C1D5319851}
+DAT 1364399707</a:History>
 <c:Identifiers>
 <o:Identifier Id="o17">
-<a:ObjectID>E1198A3C-9C06-4CB1-8298-25825793F664</a:ObjectID>
+<a:ObjectID>5741E31A-3468-44CB-A230-4198C1F1C0BC</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {95E01980-2FA9-49F0-AF22-E3545F29D339}
-DAT 1364397237
-ORG {24A8F585-052C-4462-AD87-68534AC306C3}
-DAT 1364394762
-ORG {9AB79603-F4BE-4EB9-8BA6-F5F0A4731BF3}
-DAT 1364394758</a:History>
+<a:History>ORG {9AB79603-F4BE-4EB9-8BA6-F5F0A4731BF3}
+DAT 1364399707</a:History>
 <c:Identifier.Attributes>
 <o:EntityAttribute Ref="o18"/>
 </c:Identifier.Attributes>
@@ -1661,54 +1404,42 @@ DAT 1364394758</a:History>
 </c:PrimaryIdentifier>
 <c:Attributes>
 <o:EntityAttribute Id="o18">
-<a:ObjectID>A386DD7F-1129-42D3-8FB9-4EBA86CBC9AD</a:ObjectID>
+<a:ObjectID>2D47FA9D-9182-4CCB-991F-BBDDA32727CA</a:ObjectID>
 <a:Name>writer_published_id</a:Name>
 <a:Code>WRITER_PUBLISHED_ID</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {CBCBD84D-5499-420C-82AA-C3769AB27502}
-DAT 1364397237
-ORG {81E867F7-4145-4322-B5BB-75C9FC17AF82}
-DAT 1364394762
-ORG {9ADD8539-EDB2-4523-837A-14FD6B2CE9A8}
-DAT 1364394758</a:History>
+<a:History>ORG {9ADD8539-EDB2-4523-837A-14FD6B2CE9A8}
+DAT 1364399707</a:History>
 <a:DataType>VA160</a:DataType>
 <a:Length>160</a:Length>
 <a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o19">
-<a:ObjectID>22E72D58-2F56-4CEC-878A-8BBBB56A0EC8</a:ObjectID>
+<a:ObjectID>15D333E4-391D-4E49-AF46-72E3AA757AF4</a:ObjectID>
 <a:Name>writer_document_id</a:Name>
 <a:Code>WRITER_DOCUMENT_ID</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {ED7CBB51-CA2F-4AF5-9B12-7C5F91EC2768}
-DAT 1364397237
-ORG {7E1AC77E-3863-4A75-9528-2FD754EC159A}
-DAT 1364394762
-ORG {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE},{CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}
-DAT 1364394758</a:History>
+<a:History>ORG {CBF9E1F0-9FC4-42CA-B80C-6151F32988EE},{CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}
+DAT 1364399707</a:History>
 <a:DataType>I</a:DataType>
 <a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o20">
-<a:ObjectID>7B44E075-F188-4B07-9833-93D7B750C020</a:ObjectID>
+<a:ObjectID>C6331F9B-42F5-4F79-A5F0-357C62E14E37</a:ObjectID>
 <a:Name>parent_index_id</a:Name>
 <a:Code>PARENT_INDEX_ID</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {63066360-1FF3-49A4-8394-1675259734E6}
-DAT 1364397237
-ORG {5A921759-5EA5-4936-9C5C-8D904E97F1D6}
-DAT 1364394762
-ORG {FF6D3499-5884-41C6-B3C4-FBDC5A661CBC}
-DAT 1364394758</a:History>
+<a:History>ORG {FF6D3499-5884-41C6-B3C4-FBDC5A661CBC}
+DAT 1364399707</a:History>
 <a:DataType>VA160</a:DataType>
 <a:Length>160</a:Length>
 </o:EntityAttribute>
@@ -1717,19 +1448,15 @@ DAT 1364394758</a:History>
 </c:Entities>
 <c:Relationships>
 <o:Relationship Id="o9">
-<a:ObjectID>27B70932-57DC-45F5-BF84-E77A7E28E3CD</a:ObjectID>
+<a:ObjectID>315712CC-5667-45C9-9BC7-9391C3294673</a:ObjectID>
 <a:Name>writer Publish</a:Name>
 <a:Code>WRITER_PUBLISH</a:Code>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {4F14CF71-988C-454A-BCDB-1EA40D5E6C25}
-DAT 1364397237
-ORG {66281D29-1DDF-4E2C-8B2F-AEBBAB1B3296}
-DAT 1364394762
-ORG {CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}
-DAT 1364394758</a:History>
+<a:History>ORG {CC76CC64-50EA-43FF-9EE3-B9B3F407A8FC}
+DAT 1364399707</a:History>
 <a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
 <a:Entity2ToEntity1RoleCardinality>1,1</a:Entity2ToEntity1RoleCardinality>
 <c:Object1>
@@ -1740,13 +1467,11 @@ DAT 1364394758</a:History>
 </c:Object2>
 <c:Joins>
 <o:RelationshipJoin Id="o21">
-<a:ObjectID>C896C43C-7A54-4357-AE2A-FC77EB5CBE9E</a:ObjectID>
-<a:CreationDate>1364397237</a:CreationDate>
+<a:ObjectID>C033BAC0-5EE7-4FF9-ACBA-13E041D64D8C</a:ObjectID>
+<a:CreationDate>1364399707</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364397237</a:ModificationDate>
+<a:ModificationDate>1364399707</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
-<a:History>ORG {FBCFCD93-3DAB-4EBE-8E71-F2303868AA8A}
-DAT 1364397237</a:History>
 <c:Object1>
 <o:EntityAttribute Ref="o13"/>
 </c:Object1>
@@ -1774,6 +1499,20 @@ DAT 1364397237</a:History>
 <a:TargetModelClassID>CDE44E21-9669-11D1-9914-006097355D9B</a:TargetModelClassID>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o3"/>
+</c:SessionShortcuts>
+</o:TargetModel>
+<o:TargetModel Id="o23">
+<a:ObjectID>10979D3F-8944-4F91-B9E5-408804CD155C</a:ObjectID>
+<a:Name>writer</a:Name>
+<a:Code>WRITER</a:Code>
+<a:CreationDate>1364399707</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1364399707</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<a:TargetModelURL>file:///C|/Users/AceTeaM/Documents/GitHub/Webframework-Writer-Module/mcd/writer.mcd</a:TargetModelURL>
+<a:TargetModelID>F9EAB799-0EF6-464A-9F38-6CBB5C1CA1B1</a:TargetModelID>
+<a:TargetModelClassID>1E597170-9350-11D1-AB3C-0020AF71E433</a:TargetModelClassID>
+<c:SessionShortcuts>
 <o:Shortcut Ref="o4"/>
 </c:SessionShortcuts>
 </o:TargetModel>

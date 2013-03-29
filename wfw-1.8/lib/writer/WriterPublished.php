@@ -33,14 +33,19 @@ class WriterPublished
 {
     
     /**
-    * @var      String
+    * @var      int
     */
     public $writerPublishedId;
     
     /**
     * @var      String
     */
-    public $parentIndexId;    
+    public $parentPageId;
+    
+    /**
+    * @var      String
+    */
+    public $pageId;    
 
 }
 
@@ -61,7 +66,8 @@ class WriterPublishedMgr
         $node = $doc->createElement(strtolower("WriterPublished"));
         
         $node->appendChild($doc->createTextElement("writer_published_id",$inst->writerPublishedId));
-        $node->appendChild($doc->createTextElement("parent_index_id",$inst->parentIndexId));       
+        $node->appendChild($doc->createTextElement("parent_page_id",$inst->parentPageId));
+        $node->appendChild($doc->createTextElement("page_id",$inst->pageId));       
 
           
         return $node;
@@ -107,7 +113,8 @@ class WriterPublishedMgr
     */
     public static function bindResult(&$inst,$result){
           $inst->writerPublishedId = $result->fetchValue("writer_published_id");
-          $inst->parentIndexId = $result->fetchValue("parent_index_id");          
+          $inst->parentPageId = $result->fetchValue("parent_page_id");
+          $inst->pageId = $result->fetchValue("page_id");          
 
        return true;
     }
@@ -178,7 +185,8 @@ class WriterPublishedMgr
       //execute la requete
        $query = "UPDATE writer_published SET";
        $query .= " writer_published_id =".$db->parseValue($inst->writerPublishedId).",";
-       $query .= " parent_index_id =".$db->parseValue($inst->parentIndexId).",";
+       $query .= " parent_page_id =".$db->parseValue($inst->parentPageId).",";
+       $query .= " page_id =".$db->parseValue($inst->pageId).",";
        $query = substr($query,0,-1);//remove last ','
        $query .= " where writer_published_id=".$db->parseValue($inst->writerPublishedId);
        if($db->execute($query,$result))

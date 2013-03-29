@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{F9EAB799-0EF6-464A-9F38-6CBB5C1CA1B1}" Label="" LastModificationDate="1364399702" Name="writer" Objects="24" Symbols="5" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{F9EAB799-0EF6-464A-9F38-6CBB5C1CA1B1}" Label="" LastModificationDate="1364576101" Name="writer" Objects="26" Symbols="5" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>WRITER</a:Code>
 <a:CreationDate>1364390262</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364391900</a:ModificationDate>
+<a:ModificationDate>1364576101</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -1359,7 +1359,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>WRITER_PUBLISHED</a:Code>
 <a:CreationDate>1364391683</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364399702</a:ModificationDate>
+<a:ModificationDate>1364576101</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o24">
@@ -1394,10 +1394,21 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>FF6D3499-5884-41C6-B3C4-FBDC5A661CBC</a:ObjectID>
 <a:CreationDate>1364391706</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364391768</a:ModificationDate>
+<a:ModificationDate>1364576101</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <c:DataItem>
 <o:DataItem Ref="o28"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o29">
+<a:ObjectID>E2819036-5EDC-4155-8480-C18F16C2D737</a:ObjectID>
+<a:CreationDate>1364576058</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1364576101</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
+<c:DataItem>
+<o:DataItem Ref="o30"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
@@ -1425,7 +1436,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:DataType>TXT</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o29">
+<o:DataItem Id="o31">
 <a:ObjectID>63396D54-C19D-45DE-B5DD-5FB76684A60F</a:ObjectID>
 <a:Name>author</a:Name>
 <a:Code>AUTHOR</a:Code>
@@ -1438,11 +1449,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:DataItem>
 <o:DataItem Id="o28">
 <a:ObjectID>0319FD45-1130-46E6-BCDA-998690B40846</a:ObjectID>
-<a:Name>parent_index_id</a:Name>
-<a:Code>PARENT_INDEX_ID</a:Code>
+<a:Name>parent_page_id</a:Name>
+<a:Code>PARENT_PAGE_ID</a:Code>
 <a:CreationDate>1364390267</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364391768</a:ModificationDate>
+<a:ModificationDate>1364575580</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:DataType>VA160</a:DataType>
 <a:Length>160</a:Length>
@@ -1474,7 +1485,17 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>WRITER_PUBLISHED_ID</a:Code>
 <a:CreationDate>1364391706</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364391862</a:ModificationDate>
+<a:ModificationDate>1364576101</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<a:DataType>I</a:DataType>
+</o:DataItem>
+<o:DataItem Id="o30">
+<a:ObjectID>84358779-C749-42C6-8A7B-EA66C4CE00AB</a:ObjectID>
+<a:Name>page_id</a:Name>
+<a:Code>PAGE_ID</a:Code>
+<a:CreationDate>1364576058</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1364576101</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:DataType>VA160</a:DataType>
 <a:Length>160</a:Length>
@@ -1522,7 +1543,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:AssociationLink>
 </c:AssociationsLinks>
 <c:TargetModels>
-<o:TargetModel Id="o30">
+<o:TargetModel Id="o32">
 <a:ObjectID>BE3CED14-0F71-4E2D-BE9F-B2906A927628</a:ObjectID>
 <a:Name>writer</a:Name>
 <a:Code>WRITER</a:Code>

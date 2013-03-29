@@ -39,11 +39,10 @@ class WriterModule implements iModule
     }
     
     /** 
-     * Cree un nouvel utilisateur
+     * Cree un nouveau document
      * 
-     * @param type $name
-     * @param type $attributes
-     * @param type $template_file
+     * @param type $title
+     * @param type $content_type
      */
     public static function createDocument($title,$content_type){ 
         global $app;
@@ -53,6 +52,29 @@ class WriterModule implements iModule
             return RESULT(cResult::Failed, Application::DatabaseConnectionNotFound);
 
         if(!$db->call($app->getCfgValue("database","schema"), "writer_create_document", func_get_args(), $result))
+            return false;
+        
+        $row = $result->fetchRow();
+
+        //return $result;
+        return RESULT($row["err_code"], $row["err_str"], stra_to_array($row["ext_fields"]));
+    }
+    
+    /** 
+     * Publie un document
+     * 
+     * @param type $name
+     * @param type $attributes
+     * @param type $template_file
+     */
+    public static function publishDocument($doc_id,$page_id,$parent_page_id){ 
+        global $app;
+        $db=null;
+        
+        if(!$app->getDB($db))
+            return RESULT(cResult::Failed, Application::DatabaseConnectionNotFound);
+
+        if(!$db->call($app->getCfgValue("database","schema"), "writer_document_publish", func_get_args(), $result))
             return false;
         
         $row = $result->fetchRow();
