@@ -37,24 +37,22 @@
  * 
  * ## Sortie:
  * Retourne les objets WriterDocument et le résultat de la procédure dans un document XML.
+ * @remarks Le contenu du document n'est pas retourné (l'élément *doc_content* est toujours vide).
+ * 
  * @code{.xml}
     <data>
         <writerdocument>
             <writer_document_id>542</writer_document_id>
             <doc_title>Document Title</doc_title>
             <content_type>text/plain</content_type>
-            <doc_content>
-                Document content
-            </doc_content>
+            <doc_content/>
         </writerdocument>
 
         <writerdocument>
             <writer_document_id>45</writer_document_id>
             <doc_title>Document Title</doc_title>
             <content_type>text/plain</content_type>
-            <doc_content>
-                Document content
-            </doc_content>
+            <doc_content/>
         </writerdocument>
 
         <result>ERR_OK</result>
@@ -63,6 +61,11 @@
  * @endcode
  * 
  */
+
+// Initialise le document de sortie
+$doc = new XMLDocument("1.0", "utf-8");
+$rootEl = $doc->createElement('data');
+$doc->appendChild($rootEl);
 
 // Résultat de la requete
 RESULT(cResult::Ok,cApplication::Information,array("message"=>"WFW_MSG_POPULATE_FORM"));
@@ -87,13 +90,29 @@ if($p->content_type !== NULL)
     $cond .= " and (content_type=lower('$p->content_type'))";
 
 // Traite la requête
-if(!WriterDocumentMgr::getAll($list,$cond))
-        goto failed;
+if(!$app->getDB($db))
+    goto failed;
 
+//execute la requete
+ $query = "SELECT writer_document_id, doc_title, content_type from writer_document where $cond";
+ if(!$db->execute($query,$query_result))
+    goto failed;
+
+//extrait les instances
+ $list = array();
+ $i=0;
+ while( $query_result->seek($i,iDatabaseQuery::Origin) ){
+  $inst = new WriterDocument();
+  WriterDocumentMgr::bindResult($inst,$query_result);
+  array_push($list,$inst);
+  $i++;
+ }
+ RESULT_OK();
+   /*    
+if(!WriterDocumentMgr::getAll($list,$cond))
+    goto failed;
+*/
 //charge le contenu en selection
-$doc = new XMLDocument("1.0", "utf-8");
-$rootEl = $doc->createElement('data');
-$doc->appendChild($rootEl);
 foreach($list as $key=>$inst)
     $rootEl->appendChild(WriterDocumentMgr::toXML($inst, $doc));
 
