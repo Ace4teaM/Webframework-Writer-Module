@@ -29,62 +29,25 @@
 require_once("inc/globals.php");
 global $app;
 
-//résultat de la requete
-RESULT_OK();
-$result = cResult::getLast();
+// Champs requis
+if(!$app->makeFiledList(
+        $fields,
+        array( 'ctrl' ),
+        cXMLDefault::FieldFormatClassName )
+   ) $app->processLastError();
 
-//inclue le controleur
-if(isset($_GET["page"]) && cInputIdentifier::isValid($_GET["page"])){
-    include($app->getCfgValue("application","ctrl_path")."/".$_GET["page"].".php");
-}
+// Champs requis
+if(!$app->makeFiledList(
+        $op_fields,
+        array( 'app' ),
+        cXMLDefault::FieldFormatClassName )
+   ) $app->processLastError();
 
-// Traduit le nom du champ concerné
-if(isset($result->att["field_name"]) && $app->getDefaultFile($default))
-    $result->att["field_name"] = $default->getResultText("fields",$result->att["field_name"]);
+// vérifie la validitée des champs
+$p = array();
+if(!cInputFields::checkArray($fields,$op_fields,$_REQUEST,$p))
+    $app->processLastError();
 
-// Traduit le résultat
-$att = $app->translateResult($result);
-
-// Ajoute les arguments reçues en entrée au template
-$att = array_merge($att,$_REQUEST);
-
-/* Génére la sortie */
-$format = "html";
-if(cInputFields::checkArray(array("output"=>"cInputIdentifier")))
-    $format = $_REQUEST["output"] ;
-
-switch($format){
-    case "xarg":
-        header("content-type: text/xarg");
-        echo xarg_encode_array($att);
-        break;
-    case "xml":
-        header("content-type: text/xml");
-        $doc = new XMLDocument();
-        $rootEl = $doc->createElement('data');
-        $doc->appendChild($rootEl);
-        $doc->appendAssocArray($rootEl,$att);
-        echo '<?xml version="1.0" encoding="UTF-8" ?>'.$doc->saveXML( $doc->documentElement );
-        break;
-    case "html":
-        if(isset($_GET["page"]))
-            $content = $app->makeFormView($att, isset($fields)?$fields:NULL, isset($op_fields)?$op_fields:NULL, $_REQUEST);
-        else
-            $content = $app->makeXMLView("view/writer/pages/index.html",$att);
-        
-        if($content === false)
-            $app->processLastError();
-        
-        echo $content;
-        break;
-    default:
-        RESULT(cResult::Failed,Application::UnsuportedFeature);
-        $app->processLastError();
-        break;
-}
-
-
-// ok
-exit($result->isOk() ? 0 : 1);
+$app->execCtrl($p->ctrl,$p->app);
 
 ?>

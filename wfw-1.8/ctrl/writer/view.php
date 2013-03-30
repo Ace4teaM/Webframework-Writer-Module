@@ -26,43 +26,20 @@
  * UC   : user_activate_account
  */
 
-// Résultat de la requete
-RESULT(cResult::Ok,cApplication::Information,array("message"=>"WFW_MSG_POPULATE_FORM"));
-$result = cResult::getLast();
+class Ctrl extends cApplicationCtrl{
+    public $fields    = array( 'writer_document_id' );
+    public $op_fields = null;
 
-// Champs requis
-if(!$app->makeFiledList(
-        $fields,
-        array( 'writer_document_id' ),
-        cXMLDefault::FieldFormatClassName )
-   ) $app->processLastError();
+    function main(iApplication $app, $app_path, $p) {
 
-// Traite la requête
-if(!empty($_REQUEST))
-{
-    // vérifie la validitée des champs
-    $p = array();
-    if(!cInputFields::checkArray($fields,NULL,$_REQUEST,$p))
-        goto failed;
-    
-    // obtient le document
-    if(!WriterDocumentMgr::getById( $doc, $p->writer_document_id )){
-        RESULT(cResult::Failed,WriterModule::documentNotExists);
-        goto failed;
+        // obtient le document
+        if(!WriterDocumentMgr::getById( $doc, $p->writer_document_id ))
+            return RESULT(cResult::Failed,WriterModule::documentNotExists);
+
+        //affiche le document
+        header("content-type:$doc->contentType");
+        echo($doc->docContent);
+        exit;
     }
-
-    //affiche le document
-    header("content-type:$doc->contentType");
-    echo($doc->docContent);
-    exit;
-}
-
-goto success;
-failed:
-// redefinit le resultat avec l'erreur en cours
-$result = cResult::getLast();
-
-success:
-;;
-
+};
 ?>

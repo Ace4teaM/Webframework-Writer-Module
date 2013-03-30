@@ -23,42 +23,18 @@
 /*
  * Active un compte utilisateur
  * Rôle : Visiteur
- * UC   : user_activate_account
+ * UC   : writer_document_create
  */
+class Ctrl extends cApplicationCtrl{
+    public $fields    = array('doc_title','content_type');
+    public $op_fields = null;
 
-// Résultat de la requete
-RESULT(cResult::Ok,cApplication::Information,array("message"=>"WFW_MSG_POPULATE_FORM"));
-$result = cResult::getLast();
+    function main(iApplication $app, $app_path, $p) {
+        // crée le compte utilisateur
+        if(!WriterModule::createDocument( $p->doc_title, $p->content_type ))
+            return false;
 
-// Champs requis
-if(!$app->makeFiledList(
-        $fields,
-        array( 'doc_title','content_type' ),
-        cXMLDefault::FieldFormatClassName )
-   ) $app->processLastError();
-
-// Traite la requête
-if(!empty($_REQUEST))
-{
-    // vérifie la validitée des champs
-    $p = array();
-    if(!cInputFields::checkArray($fields,NULL,$_REQUEST,$p))
-        goto failed;
-    
-    // crée le compte utilisateur
-    if(!WriterModule::createDocument( $p->doc_title, $p->content_type ))
-        goto failed;
-    
-    // retourne le resultat de cette fonction
-    $result = cResult::getLast();
-}
-
-goto success;
-failed:
-// redefinit le resultat avec l'erreur en cours
-$result = cResult::getLast();
-
-success:
-;;
-
+        return RESULT_OK();
+    }
+};
 ?>

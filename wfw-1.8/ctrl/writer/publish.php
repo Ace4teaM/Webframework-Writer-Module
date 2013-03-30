@@ -36,63 +36,41 @@
  * 
  */
 
-// Champs requis
-if(!$app->makeFiledList(
-        $fields,
-        array( 'writer_document_id', 'parent_page_id' ),
-        cXMLDefault::FieldFormatClassName )
-   ) $app->processLastError();
+class Ctrl extends cApplicationCtrl{
+    public $fields    = array( 'writer_document_id', 'parent_page_id' );
+    public $op_fields = array( 'page_id', 'set_default_file_page_entry' );
 
-// Champs requis
-if(!$app->makeFiledList(
-        $op_fields,
-        array( 'page_id', 'set_default_file_page_entry' ),
-        cXMLDefault::FieldFormatClassName )
-   ) $app->processLastError();
+    function main(iApplication $app, $app_path, $p) {
 
-//champs optionels
-$p=array();
-if(!cInputFields::checkArray($fields,$op_fields,$_REQUEST,$p))
-    goto failed;
-  
-if(!$app->getDefaultFile($def))
-    goto failed;
+        if(!$app->getDefaultFile($def))
+            return false;
 
-if(!$def->getTreeNode($p->parent_page_id))
-    goto failed;
+        if(!$def->getTreeNode($p->parent_page_id))
+            return false;
 
-if(!$p->page_id)
-    $p->page_id =  "uid_".uniqid();
+        if(!$p->page_id)
+            $p->page_id =  "uid_".uniqid();
 
-$link = "show.php?writer_document_id=$p->writer_document_id";
+        $link = "show.php?writer_document_id=$p->writer_document_id";
 
-//ajoute une entree au fichier default.xml ?
-if($p->set_default_file_page_entry){
-    if(!$def->setIndex("page",$p->page_id,$link))
-        goto failed;
+        //ajoute une entree au fichier default.xml ?
+        if($p->set_default_file_page_entry){
+            if(!$def->setIndex("page",$p->page_id,$link))
+                return false;
 
-    if(!$def->addTreeNode($p->parent_page_id,$p->page_id))
-        goto failed;
+            if(!$def->addTreeNode($p->parent_page_id,$p->page_id))
+                return false;
 
-    if(!$def->save())
-        goto failed;
-}
+            if(!$def->save())
+                return false;
+        }
 
-//definit le document comme publié
-if(!WriterModule::publishDocument($p->writer_document_id,$p->page_id,$p->parent_page_id))
-    goto failed;
+        //definit le document comme publié
+        if(!WriterModule::publishDocument($p->writer_document_id,$p->page_id,$p->parent_page_id))
+            return false;
 
-// Résultat de la requete
-RESULT(cResult::Ok,cApplication::Success,array("link"=>$link,"page_id"=>$p->page_id));
-$result = cResult::getLast();
-
-//
-goto success;
-failed:
-// redefinit le resultat avec l'erreur en cours
-$result = cResult::getLast();
-
-success:
-;;
-
+        // Résultat de la requete
+        return RESULT(cResult::Ok,cApplication::Success,array("link"=>$link,"page_id"=>$p->page_id));
+    }
+};
 ?>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
     <title>Writer</title>
-    <name>writermodule</name>
+    <name>writer_module</name>
     <base>webframework</base>
     <description>Editeur de documents</description>
     
     <index>
         <page id="index" name="Accueil">index.php</page>
-        <page id="datamodel" role="visitor" name="Obtient le model de données">ctrl.php?page=datamodel</page>
+        <page id="datamodel" role="visitor" name="Obtient le model de données">ctrl.php?app=wfw&amp;ctrl=datamodel</page>
         <!-- admin -->
-        <page id="create" role="administrator" name="Créer un document">index.php?page=create</page>
-        <page id="write" role="administrator" name="Editer un document">index.php?page=write</page>
-        <page id="list" role="administrator" name="Liste les documents">index.php?page=list</page>
-        <page id="publish" role="administrator" name="Publier un document">index.php?page=publish</page>
+        <page id="create" role="administrator" name="Créer un document">ctrl.php?app=writer_module&amp;ctrl=create</page>
+        <page id="write" role="administrator" name="Editer un document">ctrl.php?app=writer_module&amp;ctrl=write</page>
+        <page id="list" role="administrator" name="Liste les documents">ctrl.php?app=writer_module&amp;ctrl=list</page>
+        <page id="publish" role="administrator" name="Publier un document">ctrl.php?app=writer_module&amp;ctrl=publish</page>
         <!-- visiteur -->
-        <page id="view" role="visitor" name="Afficher un document">view.php</page>
+        <page id="view" role="visitor" name="Afficher un document">ctrl.php?app=writer_module&amp;ctrl=view</page>
         <!-- utilisateur -->
     </index>
 

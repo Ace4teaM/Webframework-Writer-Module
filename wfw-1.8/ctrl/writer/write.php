@@ -26,52 +26,28 @@
  * UC   : user_activate_account
  */
 
-// Résultat de la requete
-RESULT(cResult::Ok,cApplication::Information,array("message"=>"WFW_MSG_POPULATE_FORM"));
-$result = cResult::getLast();
+class Ctrl extends cApplicationCtrl{
+    public $fields    = array( 'doc_content','writer_document_id' );
+    public $op_fields = null;
 
-// Champs requis
-if(!$app->makeFiledList(
-        $fields,
-        array( 'doc_content','writer_document_id' ),
-        cXMLDefault::FieldFormatClassName )
-   ) $app->processLastError();
+    function main(iApplication $app, $app_path, $p) {
 
-// Traite la requête
-if(!empty($_REQUEST))
-{
-    // vérifie la validitée des champs
-    $p = array();
-    if(!cInputFields::checkArray($fields,NULL,$_REQUEST,$p))
-        goto failed;
-    
-    // obtient le document
-    if(!WriterDocumentMgr::getById( $doc, $p->writer_document_id )){
-        RESULT(cResult::Failed,WriterModule::documentNotExists);
-        goto failed;
+        // obtient le document
+        if(!WriterDocumentMgr::getById( $doc, $p->writer_document_id ))
+            return RESULT(cResult::Failed,WriterModule::documentNotExists);
+
+        //verifie le format du contenu
+    /*    if($doc->contentType == "text/xml"){
+            //parse xml and check...
+        }*/
+
+        //actualise
+        $doc->docContent = $p->doc_content;
+        if(!WriterDocumentMgr::update( $doc ))
+            return false;
+
+        return RESULT_OK();
     }
-
-    //verifie le format du contenu
-/*    if($doc->contentType == "text/xml"){
-        //parse xml and check...
-    }*/
-    
-    //actualise
-    $doc->docContent = $p->doc_content;
-    if(!WriterDocumentMgr::update( $doc ))
-        goto failed;
-    
-    
-    // retourne le resultat de cette fonction
-    $result = cResult::getLast();
-}
-
-goto success;
-failed:
-// redefinit le resultat avec l'erreur en cours
-$result = cResult::getLast();
-
-success:
-;;
+};
 
 ?>
