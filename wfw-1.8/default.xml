@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-    <title>Mailling</title>
-    <name>mail_module</name>
+    <title>Writer</title>
+    <name>writermodule</name>
     <base>webframework</base>
-    <description>Gestionnaire de courrier électronique</description>
+    <description>Editeur de documents</description>
     
     <index>
         <page id="index" name="Accueil">index.php</page>
+        <page id="datamodel" role="visitor" name="Obtient le model de données">ctrl.php?page=datamodel</page>
         <!-- admin -->
         <page id="create" role="administrator" name="Créer un document">index.php?page=create</page>
         <page id="write" role="administrator" name="Editer un document">index.php?page=write</page>

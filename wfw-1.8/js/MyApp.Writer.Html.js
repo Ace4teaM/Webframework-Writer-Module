@@ -78,13 +78,11 @@ Ext.define('MyApp.Writer.Html.Editor', {
             text: 'Nouveau',
             iconCls: 'wfw_icon new',
             handler:function(){
-                var form = Ext.create('MyApp.FieldsDialog',{
+                var form = Ext.create('MyApp.DataModel.FieldsDialog',{
                     title: 'Nouveau',
-                    fieldsform:Ext.create('MyApp.FieldsForm',{
-                        wfw_fields:[{
-                            id:'doc_title'
-                        }]
-                        }),
+                    fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
+                        wfw_fields:[{ id:'doc_title' }]
+                    }),
                     callback:function(data){
                         //appel le controleur
                         wfw.Request.Add(null,wfw.Navigator.getURI("create"),
@@ -171,10 +169,10 @@ Ext.define('MyApp.Writer.Html.Editor', {
             text: 'Publier',
             iconCls: 'wfw_icon publish',
             handler:function(){
-                var form = Ext.create('MyApp.FieldsDialog',{
+                var form = Ext.create('MyApp.DataModel.FieldsDialog',{
                     title: 'Nouveau',
-                    fieldsform:Ext.create('MyApp.FieldsForm',{
-                        wfw_fields:[{id:'page_id',optional:true},{id:'parent_page_id'},{id:'set_default_file_page_entry',type:'bool'},{id:'show_doc_after_publish',type:'bool'}]
+                    fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
+                        wfw_fields:[{id:'page_id',optional:true},{id:'parent_page_id'},{id:'set_default_file_page_entry'},{id:'show_doc_after_publish'}]
                     }),
                     callback:function(data){
                         //appel le controleur
@@ -286,7 +284,7 @@ MyApp.Writer.Html.onInitEditorLayout = function(Y){
     var wfw = Y.namespace("wfw");
     var g = MyApp.global.Vars;
     
-    //var form = Ext.create('MyApp.FieldsForm',{wfw_fields:[{id:'content_type'}]});
+    //var form = Ext.create('MyApp.DataModel.FieldsForm',{wfw_fields:[{id:'content_type'}]});
     var editor = Ext.create('MyApp.Writer.Html.Editor');
     //var editor = Ext.create('Ext.panel.Panel');
 

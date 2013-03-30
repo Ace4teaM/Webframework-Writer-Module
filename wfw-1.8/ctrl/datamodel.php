@@ -31,16 +31,29 @@
  * | Rôle         | Visiteur
  * | UC           | wfw_data_model
  * 
- * 
+ * @param lang Langage pour les textes
  */
+
+$lang="fr";
 
 // Initialise le document de sortie
 $doc = new XMLDocument("1.0", "utf-8");
 $rootEl = $doc->createElement('data');
 $doc->appendChild($rootEl);
 
-foreach($app->getCfgSection('fields_formats') as $id=>$type)
-    $rootEl->appendChild($doc->createTextElement(strtolower($id),strtolower($type)));
+$app->getDefaultFile($def);
+
+//types et ids
+foreach($app->getCfgSection('fields_formats') as $id=>$type){
+    $id = strtolower($id);
+    $type = strtolower($type);
+    $node = $doc->createTextElement($id,$type);
+    if($def && $def->getFiledText($id, $text, $lang))
+        $node->setAttribute("label",$text);
+    $rootEl->appendChild($node);
+}
+
+//textes
 
 header("content-type: text/xml");
 echo '<?xml version="1.0" encoding="UTF-8" ?>'.$doc->saveXML( $doc->documentElement );

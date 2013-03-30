@@ -1,7 +1,7 @@
 <?php
 /*
     ---------------------------------------------------------------------------------------------------------------------------------------
-    (C)2012-2013 Thomas AUGUEY <contact@aceteam.org>
+    (C)2013 Thomas AUGUEY <contact@aceteam.org>
     ---------------------------------------------------------------------------------------------------------------------------------------
     This file is part of WebFrameWork.
 
@@ -21,7 +21,7 @@
 */
 
 /*
- * Active un compte utilisateur
+ * Point d'entree des controleurs principaux
  * Rôle : Visiteur
  * UC   : user_activate_account
  */
