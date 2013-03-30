@@ -19,7 +19,12 @@
     along with WebFrameWork.  If not, see <http://www.gnu.org/licenses/>.
     ---------------------------------------------------------------------------------------------------------------------------------------
 */
+if(isset($_REQUEST["ctrl"]))
+    include("ctrl.php");
 
-include("writer.php");
+require_once("inc/globals.php");
+global $app;
+
+$app->showXMLView("view/writer/pages/index.html",array());
 
 ?>
