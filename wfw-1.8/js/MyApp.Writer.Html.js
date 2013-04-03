@@ -33,7 +33,7 @@ Ext.define('MyApp.Writer.Html', {});
 
 /*------------------------------------------------------------------------------------------------------------------*/
 //
-// Ouvre un document est retourne son contenu
+// Panneau d'edition principal
 //
 /*------------------------------------------------------------------------------------------------------------------*/
 Ext.define('MyApp.Writer.Html.Editor', {
@@ -280,156 +280,107 @@ Ext.define('MyApp.Writer.Html.Editor', {
 
 });
 
-MyApp.Writer.Html.onInitEditorLayout = function(Y){
+
+/*------------------------------------------------------------------------------------------------------------------*/
+//
+// Initialise le layout
+//
+/*------------------------------------------------------------------------------------------------------------------*/
+Ext.apply(MyApp.Writer.Html,{onInitLayout: function(Y){
+
     var wfw = Y.namespace("wfw");
     var g = MyApp.global.Vars;
     
     //var form = Ext.create('MyApp.DataModel.FieldsForm',{wfw_fields:[{id:'content_type'}]});
     var editor = Ext.create('MyApp.Writer.Html.Editor');
-    //var editor = Ext.create('Ext.panel.Panel');
-
-    g.contentPanel.removeAll();
-    //g.contentPanel.add(form);
-    g.contentPanel.add(editor);
-}
-
-MyApp.Writer.Html.onInitEditorLayout_ = function(Y){
 
     var wfw = Y.namespace("wfw");
     var g = MyApp.global.Vars;
 
-    //contenu
-    g.contentPanel.removeAll();
-    g.contentPanel.add({
-        id:'writer_html_layout',
-        name:'writer_html_layout',
-        xtype:'panel',
-        layout:'vbox',
-        layoutConfig: {
-            align : 'stretch',
-            pack  : 'start'
+    //l'élément de résultat n'est plus utilisé
+    Y.Node.one("#result").hide();
+    
+    // Nord
+    g.statusPanel = Ext.create('Ext.Panel', {
+        header:false,
+        layout: 'hbox',
+        region: 'north',     // position for region
+        split: true,         // enable resizing
+        margins: '0 5 5 5',
+        /*html: Y.Node.one("#menu").get("innerHTML")*/
+        items: [{
+            header:false,
+            border: false,
+            width:200,
+            contentEl: Y.Node.one("#header").getDOMNode()
+        },{
+            header:false,
+            width:"100%",
+            border: false,
+            contentEl: Y.Node.one("#status").getDOMNode()
+        }],
+        renderTo: Ext.getBody()
+    });
+
+    // Ouest
+    g.menuPanel = Ext.create('Ext.Panel', {
+        title: 'Menu',
+        layout: {
+            // layout-specific configs go here
+            type: 'accordion',
+            titleCollapse: false,
+            animate: true,
+            activeOnTop: true
         },
+        region: 'west',     // position for region
+        width: 200,
+        split: true,         // enable resizing
+        margins: '0 5 5 5',
+        /*html: Y.Node.one("#menu").get("innerHTML")*/
+        items: [{
+            title: 'Administrateur',
+            contentEl: Y.Node.one("#menu1").getDOMNode()
+        },{
+            title: 'Visiteur',
+            contentEl: Y.Node.one("#menu2").getDOMNode()
+        },{
+            title: 'Utilisateur',
+            contentEl: Y.Node.one("#menu3").getDOMNode()
+        }],
+        renderTo: Ext.getBody()
+    });
+
+    // Sud
+    g.footerPanel = Ext.create('Ext.Panel', {
+        header :false,
+        //title: 'Pied de page',
+        region: 'south',     // position for region
+        split: true,         // enable resizing
+        margins: '0 5 5 5',
+        contentEl: Y.Node.one("#footer").getDOMNode()
+    });
+
+    // Centre
+    g.contentPanel = Ext.create('Ext.Panel', {
+        header :false,
+        //title: 'Content',
+        region: 'center',     // position for region
+        split: true,         // enable resizing
+        margins: '0',
+        layout: 'fit',
+        autoScroll:true,
         defaults:{
+            header:false,
+            border: false,
             width:"100%"
         },
-        autoScroll:false,
-        title:"Editeur HTML",
-        border:false,
-        id:"editor",
-        bodyPadding:6,
-        items:[
-        {
-            xtype: 'hiddenfield',
-            id:'writer_document_id',
-            name:'writer_document_id'
-        },
-        {
-            border:false,
-            html:'Titre :',
-            bodyPadding:6
-        },
-        {
-            xtype: 'textfield',
-            id:'doc_title',
-            name:'doc_title'
-        },
-        {
-            border:false,
-            html:'Contenu :',
-            bodyPadding:6
-        },
-        {
-            xtype: 'htmleditor',
-            id:'doc_content',
-            name:'doc_content',
-            flex:1,
-            autoScroll:true
-        }
-        ],
-        tbar: [
-        {
-            id: 'newBtn',
-            text: 'Nouveau',
-            iconCls: 'wfw_icon new',
-            handler:function(){
-                MyApp.Writer.Html.createDialog(Y,function(data){
-                    Ext.getCmp('writer_document_id').setValue(data.writer_document_id);
-                    Ext.getCmp('doc_content').setValue("");
-                    Ext.getCmp('doc_title').setValue(data.doc_title);
-                });
-            }
-        },
-        '-',
-        {
-            id: 'openBtn',
-            text: 'Ouvrir',
-            iconCls: 'wfw_icon open',
-            handler:function(){
-                MyApp.Writer.Html.openDialog(Y,function(dataModel){
-                    wfw.puts(dataModel.getAssociatedData());
-                    Ext.getCmp('writer_document_id').setValue(dataModel.get("writer_document_id"));
-                    Ext.getCmp('doc_content').setValue(dataModel.get("doc_content"));
-                    Ext.getCmp('doc_title').setValue(dataModel.get("doc_title"));
-                });
-            }
-        },
-        '-',
-        {
-            id: 'saveBtn',
-            text: 'Sauvegarder',
-            iconCls: 'wfw_icon save',
-            handler:function(){
-                // appel le controleur
-                wfw.Request.Add(null,wfw.Navigator.getURI("write"),
-                {
-                    output:'xml',
-                    writer_document_id : Ext.getCmp('writer_document_id').value,
-                    doc_content : Ext.getCmp('doc_content').value/*,
-                        doc_title : Ext.getCmp('doc_title').value*/
-                },
-                wfw.Xml.onCheckRequestResult,
-                {
-                    onsuccess:function(req,doc,root){
-                        MyApp.showResultToMsg(wfw.Result.fromXML(root));
-                    },
-                    onfailed:function(req,doc,root){
-                        MyApp.showResultToMsg(wfw.Result.fromXML(root));
-                    }
-                },
-                false
-                );
-            }
-        },{
-            id: 'publishBtn',
-            text: 'Publier',
-            iconCls: 'wfw_icon publish'
-        },'-',{
-            id: 'printBtn',
-            text: 'Imprimer',
-            iconCls: 'wfw_icon print',
-            handler:function(){
-                var uri = wfw.URI.remakeURI(wfw.Navigator.getURI('view'),{
-                    writer_document_id : Ext.getCmp('writer_document_id').value
-                });
-                window.open(uri, 'view').print();
-                
-            }
-        },'->',{
-            id: 'showBtn',
-            text: 'Afficher dans le navigateur',
-            iconCls: 'wfw_icon view',
-            handler:function(){
-                var uri = wfw.URI.remakeURI(wfw.Navigator.getURI('view'),{
-                    writer_document_id : Ext.getCmp('writer_document_id').value
-                });
-                window.open(uri, 'view');
-                
-            }
-        }]
+        items: [editor],
+        renderTo: Ext.getBody()
     });
-    
-//MyApp.Writer.Html.lockLayout();
-}
 
-//ajoute la fonction a l'initialisation de l'application'
-MyApp.Loading.callback_list.push( MyApp.Writer.Html.onInitEditorLayout );
+    //viewport
+    g.viewport = Ext.create('Ext.Viewport', {
+        layout: 'border',
+        items: [g.contentPanel,g.menuPanel,g.statusPanel,g.footerPanel]
+    });
+}});

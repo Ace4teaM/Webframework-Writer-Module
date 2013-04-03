@@ -30,13 +30,13 @@ Ext.define('MyApp.App', {});
  * */
 /*------------------------------------------------------------------------------------------------------------------*/
 
-MyApp.App.onInitLayout = function(Y)
-{
+Ext.apply(MyApp.Loading, {onInitLayout:function(Y){
+
     var wfw = Y.namespace("wfw");
     var g = MyApp.global.Vars;
 
     //l'élément de résultat n'est plus utilisé
-    Y.Node.one("#result").hide();
+    //Y.Node.one("#result").hide();
     
     // Nord
     g.statusPanel = Ext.create('Ext.Panel', {
@@ -67,14 +67,17 @@ MyApp.App.onInitLayout = function(Y)
         region: 'center',     // position for region
         split: true,         // enable resizing
         margins: '0',
-        layout: 'fit',
+        layout: 'vbox',
         autoScroll:true,
-        //html: Y.Node.one("#content").get("innerHTML")
-        items: [{
+        defaults:{
             header:false,
             border: false,
-            contentEl: Y.Node.one("#content").getDOMNode()
-        }],
+            width:"100%"
+        },
+        items: [
+            { contentEl: Y.Node.one("#result").getDOMNode() },
+            { contentEl: Y.Node.one("#content").getDOMNode() }
+        ],
         renderTo: Ext.getBody()
     });
 
@@ -123,7 +126,4 @@ MyApp.App.onInitLayout = function(Y)
     });
 
     //original.remove();
-}
-
-MyApp.Loading.callback_list.push(MyApp.App.onInitLayout);
-MyApp.Loading.callback_list.push(MyApp.onInitForm);
+}});

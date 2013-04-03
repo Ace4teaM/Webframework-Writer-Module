@@ -15,6 +15,9 @@
         <meta name="keywords" content="document, editeur" />
         
         <script type="text/javascript" src="js/MyApp.Writer.Html.js"></script> 
+        <script type="text/javascript">
+            Ext.apply(MyApp.Loading, { onInitLayout: MyApp.Writer.Html.onInitLayout });
+        </script> 
 </head>
 
 <!-- Document -->
