@@ -106,7 +106,7 @@ Ext.define('MyApp.Writer.OpenDialog', {
                 //obtient le contenu
                 wfw.Request.Add(
                     null,
-                    wfw.Navigator.getURI("view"),
+                    wfw.Navigator.getURI("read"),
                     {
                         writer_document_id:data.writer_document_id
                     },

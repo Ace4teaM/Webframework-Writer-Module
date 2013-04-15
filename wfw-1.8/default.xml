@@ -14,6 +14,7 @@
         <page id="list" role="administrator" name="Liste les documents">ctrl.php?app=writer_module&amp;ctrl=list</page>
         <page id="publish" role="administrator" name="Publier un document">ctrl.php?app=writer_module&amp;ctrl=publish</page>
         <page id="get_publish" role="administrator" name="Informations de publication d'un document">ctrl.php?app=writer_module&amp;ctrl=get_publish</page>
+        <page id="read" role="administrator" name="Lit un document">ctrl.php?app=writer_module&amp;ctrl=read</page>
         <!-- visiteur -->
         <page id="view" role="visitor" name="Afficher un document">ctrl.php?app=writer_module&amp;ctrl=view</page>
         <!-- utilisateur -->

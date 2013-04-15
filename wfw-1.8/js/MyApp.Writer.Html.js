@@ -83,6 +83,7 @@ Ext.define('MyApp.Writer.Html.Editor', {
                     fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
                         wfw_fields:[{ id:'doc_title' }]
                     }),
+                    defaults_buttons:false,
                     callback:function(data){
                         //appel le controleur
                         wfw.Request.Add(null,wfw.Navigator.getURI("create"),
