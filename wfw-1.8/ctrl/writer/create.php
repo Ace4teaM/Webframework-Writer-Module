@@ -31,10 +31,7 @@ class Ctrl extends cApplicationCtrl{
 
     function main(iApplication $app, $app_path, $p) {
         // crée le compte utilisateur
-        if(!WriterModule::createDocument( $p->doc_title, $p->content_type ))
-            return false;
-
-        return RESULT_OK();
+        return WriterModule::createDocument( $p->doc_title, $p->content_type );
     }
 };
 ?>
