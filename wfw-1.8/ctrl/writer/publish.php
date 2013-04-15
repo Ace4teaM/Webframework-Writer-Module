@@ -51,7 +51,7 @@ class Ctrl extends cApplicationCtrl{
         if(!$p->page_id)
             $p->page_id =  "uid_".uniqid();
 
-        $link = $app->makeCtrlURI("writer_module","view","writer_document_id=$p->writer_document_id");
+        $link = $app->makeCtrlURI("writer_module","view","writer_document_id=$p->writer_document_id&templatize=true");
 
         //ajoute une entrée au fichier default.xml ?
         if($p->set_in_default){
@@ -70,7 +70,8 @@ class Ctrl extends cApplicationCtrl{
             if (!WriterDocumentMgr::getById($doc, $p->writer_document_id))
                 return RESULT(cResult::Failed,"WRITER_DOCUMENT_NOT_FOUND");
             $filename = $app->getCfgValue("writer_module", "output_doc_path") . "/$p->page_id.html";
-            if(!file_put_contents($filename, $doc->docContent))
+            $header = '<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head>';
+            if(!file_put_contents($filename, "<!DOCTYPE html>\n<html>\n$header\n<body>\n".$doc->docContent."\n</body>\n</html>"))
                 return RESULT(cResult::Failed,"WRITER_CANT_WRITE_CACHE_FILE",array("message"=>TRUE,"FILE"=>$filename));
         }
         
