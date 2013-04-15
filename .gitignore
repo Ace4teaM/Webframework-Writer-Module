@@ -1,5 +1,6 @@
 .*
 ~*
 /doc
+/wfw-1.8/view/writer/cache/*
 /wfw-mod-article_writer-1.1.0
 !/.gitignore
