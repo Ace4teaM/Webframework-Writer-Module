@@ -7,6 +7,7 @@
     
     <index>
         <page id="index" name="Accueil">index.php</page>
+        <page id="yui_config" role="visitor" name="Configuration YUI">ctrl.php?app=wfw&amp;ctrl=yui_config</page>
         <page id="datamodel" role="visitor" name="Obtient le model de données">ctrl.php?app=wfw&amp;ctrl=datamodel</page>
         <!-- admin -->
         <page id="create" role="administrator" name="Créer un document">ctrl.php?app=writer_module&amp;ctrl=create</page>
@@ -18,10 +19,10 @@
         <!-- visiteur -->
         <page id="view" role="visitor" name="Afficher un document">ctrl.php?app=writer_module&amp;ctrl=view</page>
         <!-- utilisateur -->
-    <page id="test">ctrl.php?app=writer_module&amp;ctrl=view&amp;writer_document_id=2</page></index>
+    </index>
 
     <tree>
-        <index><test/></index>
+        <index></index>
         <create/>
     </tree>
     

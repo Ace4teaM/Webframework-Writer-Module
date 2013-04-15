@@ -23,7 +23,8 @@ Ext.require([
     'Ext.grid.*',
     'Ext.data.*',
     'Ext.util.*',
-    'Ext.state.*'
+    'Ext.state.*',
+    'Ext.ux.form.field.TinyMCE'
     ]);
 
 
@@ -81,9 +82,9 @@ Ext.define('MyApp.Writer.Html.Editor', {
                 var form = Ext.create('MyApp.DataModel.FieldsDialog',{
                     title: 'Nouveau',
                     fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
-                        wfw_fields:[{ id:'doc_title' }]
+                        wfw_fields:[{ id:'doc_title' }],
+                        defaults_buttons:false
                     }),
-                    defaults_buttons:false,
                     callback:function(data){
                         //appel le controleur
                         wfw.Request.Add(null,wfw.Navigator.getURI("create"),
@@ -139,7 +140,7 @@ Ext.define('MyApp.Writer.Html.Editor', {
                 {
                     output:'xml',
                     writer_document_id : me.docIdField.value,
-                    doc_content : me.docContentField.value
+                    doc_content : me.docContentField.getValue()
                 },
                 wfw.Xml.onCheckRequestResult,
                 {
@@ -231,11 +232,18 @@ Ext.define('MyApp.Writer.Html.Editor', {
         this.docTitleField = Ext.create('Ext.form.field.Text',{
             name:'doc_title'
         });
-        this.docContentField = Ext.create('Ext.form.field.HtmlEditor',{
-            xtype: 'htmleditor',
+        this.docContentField = Ext.create('Ext.ux.form.field.TinyMCE',{
+            anchor: '100%',
             name:'doc_content',
             flex:1,
-            autoScroll:true
+            autoScroll:true,
+            //disabled: true,
+            tinymceConfig: {
+                theme_advanced_buttons1: 'fullscreen,|,undo,redo,|,bold,italic,strikethrough,|,charmap,|,removeformat,code',
+                theme_advanced_buttons2: '',
+                theme_advanced_buttons3: '',
+                theme_advanced_buttons4: ''
+            }
         });
 
         //Toolbar
