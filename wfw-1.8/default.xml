@@ -13,6 +13,7 @@
         <page id="write" role="administrator" name="Editer un document">ctrl.php?app=writer_module&amp;ctrl=write</page>
         <page id="list" role="administrator" name="Liste les documents">ctrl.php?app=writer_module&amp;ctrl=list</page>
         <page id="publish" role="administrator" name="Publier un document">ctrl.php?app=writer_module&amp;ctrl=publish</page>
+        <page id="get_publish" role="administrator" name="Informations de publication d'un document">ctrl.php?app=writer_module&amp;ctrl=get_publish</page>
         <!-- visiteur -->
         <page id="view" role="visitor" name="Afficher un document">ctrl.php?app=writer_module&amp;ctrl=view</page>
         <!-- utilisateur -->
@@ -85,6 +86,7 @@
             <!-- **************************************************************
                    Writer Module
             ************************************************************** -->
+            <WRITER_CANT_WRITE_CACHE_FILE>Implossible de créer le fichier en cache ($FILE)</WRITER_CANT_WRITE_CACHE_FILE>
         </messages>
         
         <fields>
