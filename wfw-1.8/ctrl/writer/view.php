@@ -28,16 +28,20 @@
 
 class Ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
-    public $op_fields = null;
+    public $op_fields = array( 'templatize' );
 
     function main(iApplication $app, $app_path, $p) {
 
+       //obtient la base de donnees courrante
+       if(!$app->getDB($db))
+         return false;
+      
         // obtient le document
         if(!WriterDocumentMgr::getById( $doc, $p->writer_document_id ))
             return RESULT(cResult::Failed,WriterModule::documentNotExists);
 
         // obtient la publication
-        if(!WriterPublishedMgr::getByRelation( $publish, $doc ))
+        if(!WriterPublishedMgr::get( $publish, "writer_document_id = ".$db->parseValue($p->writer_document_id) ))
             return RESULT(cResult::Failed,WriterModule::documentNotPublished);
         
         $content = $doc->docContent;
@@ -46,6 +50,10 @@ class Ctrl extends cApplicationCtrl{
             $content = file_get_contents($filename);
             if(!$content)
                 return RESULT(cResult::Failed,WriterModule::documentCacheNotFound);
+            if($p->templatize){
+                $app->showXMLView($filename,array());
+                exit;
+            }
         }
 
         //affiche le document
