@@ -36,9 +36,21 @@ class Ctrl extends cApplicationCtrl{
         if(!WriterDocumentMgr::getById( $doc, $p->writer_document_id ))
             return RESULT(cResult::Failed,WriterModule::documentNotExists);
 
+        // obtient la publication
+        if(!WriterPublishedMgr::getByRelation( $publish, $doc ))
+            return RESULT(cResult::Failed,WriterModule::documentNotPublished);
+        
+        $content = $doc->docContent;
+        if($publish->setInCache){
+            $filename = $app->getCfgValue("writer_module", "output_doc_path") . "/$publish->pageId.html";
+            $content = file_get_contents($filename);
+            if(!$content)
+                return RESULT(cResult::Failed,WriterModule::documentCacheNotFound);
+        }
+
         //affiche le document
         header("content-type:$doc->contentType");
-        echo($doc->docContent);
+        echo($content);
         exit;
     }
 };

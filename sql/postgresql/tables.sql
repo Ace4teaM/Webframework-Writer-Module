@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  PostgreSQL 8 (WFW)                            */
-/* Date de création :  03/04/2013 11:29:44                      */
+/* Date de création :  15/04/2013 09:42:08                      */
 /*==============================================================*/
 
 
@@ -27,6 +27,8 @@ create table WRITER_PUBLISHED (
    WRITER_DOCUMENT_ID   INT4                 not null,
    PARENT_PAGE_ID       VARCHAR(160)         null,
    PAGE_ID              VARCHAR(160)         not null,
+   SET_IN_DEFAULT       BOOL                 null,
+   SET_IN_CACHE         BOOL                 null,
    constraint PK_WRITER_PUBLISHED primary key (WRITER_PUBLISHED_ID)
 );
 

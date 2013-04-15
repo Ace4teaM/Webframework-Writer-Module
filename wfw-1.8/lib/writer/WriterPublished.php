@@ -31,6 +31,13 @@
 */
 class WriterPublished
 {
+   public function getId(){
+      return $this->writerPublishedId;
+  }
+   public function setId($id){
+      return $this->writerPublishedId = $id;
+  }
+
     
     /**
     * @var      int
@@ -45,7 +52,17 @@ class WriterPublished
     /**
     * @var      String
     */
-    public $pageId;    
+    public $pageId;
+    
+    /**
+    * @var      boolean
+    */
+    public $setInDefault;
+    
+    /**
+    * @var      boolean
+    */
+    public $setInCache;    
 
 }
 
@@ -57,6 +74,24 @@ class WriterPublished
 class WriterPublishedMgr
 {
     /**
+     * @brief Convert existing instance to an associative array
+     * @param $inst Entity instance (WriterPublished)
+     * @return New associative array
+     */
+    public static function toArray(&$inst) {
+        $ar = array();
+        
+        $ar["writer_published_id"] = $inst->writerPublishedId;
+        $ar["parent_page_id"] = $inst->parentPageId;
+        $ar["page_id"] = $inst->pageId;
+        $ar["set_in_default"] = $inst->setInDefault;
+        $ar["set_in_cache"] = $inst->setInCache;       
+
+          
+        return $ar;
+    }
+    
+    /**
      * @brief Convert existing instance to XML element
      * @param $inst Entity instance (WriterPublished)
      * @param $doc Parent document
@@ -67,7 +102,9 @@ class WriterPublishedMgr
         
         $node->appendChild($doc->createTextElement("writer_published_id",$inst->writerPublishedId));
         $node->appendChild($doc->createTextElement("parent_page_id",$inst->parentPageId));
-        $node->appendChild($doc->createTextElement("page_id",$inst->pageId));       
+        $node->appendChild($doc->createTextElement("page_id",$inst->pageId));
+        $node->appendChild($doc->createTextElement("set_in_default",$inst->setInDefault));
+        $node->appendChild($doc->createTextElement("set_in_cache",$inst->setInCache));       
 
           
         return $node;
@@ -114,7 +151,9 @@ class WriterPublishedMgr
     public static function bindResult(&$inst,$result){
           $inst->writerPublishedId = $result->fetchValue("writer_published_id");
           $inst->parentPageId = $result->fetchValue("parent_page_id");
-          $inst->pageId = $result->fetchValue("page_id");          
+          $inst->pageId = $result->fetchValue("page_id");
+          $inst->setInDefault = $result->fetchValue("set_in_default");
+          $inst->setInCache = $result->fetchValue("set_in_cache");          
 
        return true;
     }
@@ -167,9 +206,53 @@ class WriterPublishedMgr
     }
     
    /*
+      @brief Insert single entry by id
+      @param $inst WriterDocument instance pointer to initialize
+      @param $add_fields Array of columns names/columns values of additional fields
+      @param $db iDataBase derived instance
+    */
+    public static function insert(&$inst,$add_fields=null,$db=null){
+       //obtient la base de donnees courrante
+       global $app;
+       if(!$db && !$app->getDB($db))
+         return false;
+      
+       //id initialise ?
+       if(!isset($inst->writerPublishedId))
+           return RESULT(cResult::Failed, cApplication::EntityMissingId);
+      
+      //execute la requete
+       $query = "INSERT INTO writer_published (";
+       $query .= " writer_published_id,";
+       $query .= " parent_page_id,";
+       $query .= " page_id,";
+       $query .= " set_in_default,";
+       $query .= " set_in_cache,";
+       if(is_array($add_fields))
+           $query .= implode(',',array_keys($add_fields)).',';
+       $query = substr($query,0,-1);//remove last ','
+       $query .= ")";
+       
+       $query .= " VALUES(";
+       $query .= $db->parseValue($inst->writerPublishedId).",";
+       $query .= $db->parseValue($inst->parentPageId).",";
+       $query .= $db->parseValue($inst->pageId).",";
+       $query .= $db->parseValue($inst->setInDefault).",";
+       $query .= $db->parseValue($inst->setInCache).",";
+       if(is_array($add_fields))
+           $query .= implode(',',$add_fields).',';
+       $query = substr($query,0,-1);//remove last ','
+       $query .= ")";
+       
+       if($db->execute($query,$result))
+          return true;
+
+       return false;
+    }
+    
+   /*
       @brief Update single entry by id
       @param $inst WriterDocument instance pointer to initialize
-      @param $id Primary unique identifier of entry to retreive
       @param $db iDataBase derived instance
     */
     public static function update(&$inst,$db=null){
@@ -180,13 +263,15 @@ class WriterPublishedMgr
       
        //id initialise ?
        if(!isset($inst->writerPublishedId))
-           return RESULT(cResult::Failed, cApplication::entityMissingId);
+           return RESULT(cResult::Failed, cApplication::EntityMissingId);
       
       //execute la requete
        $query = "UPDATE writer_published SET";
        $query .= " writer_published_id =".$db->parseValue($inst->writerPublishedId).",";
        $query .= " parent_page_id =".$db->parseValue($inst->parentPageId).",";
        $query .= " page_id =".$db->parseValue($inst->pageId).",";
+       $query .= " set_in_default =".$db->parseValue($inst->setInDefault).",";
+       $query .= " set_in_cache =".$db->parseValue($inst->setInCache).",";
        $query = substr($query,0,-1);//remove last ','
        $query .= " where writer_published_id=".$db->parseValue($inst->writerPublishedId);
        if($db->execute($query,$result))

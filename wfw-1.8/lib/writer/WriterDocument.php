@@ -31,6 +31,13 @@
 */
 class WriterDocument
 {
+   public function getId(){
+      return $this->writerDocumentId;
+  }
+   public function setId($id){
+      return $this->writerDocumentId = $id;
+  }
+
     
     /**
     * @var      int
@@ -61,6 +68,23 @@ class WriterDocument
 */
 class WriterDocumentMgr
 {
+    /**
+     * @brief Convert existing instance to an associative array
+     * @param $inst Entity instance (WriterDocument)
+     * @return New associative array
+     */
+    public static function toArray(&$inst) {
+        $ar = array();
+        
+        $ar["writer_document_id"] = $inst->writerDocumentId;
+        $ar["doc_title"] = $inst->docTitle;
+        $ar["content_type"] = $inst->contentType;
+        $ar["doc_content"] = $inst->docContent;       
+
+          
+        return $ar;
+    }
+    
     /**
      * @brief Convert existing instance to XML element
      * @param $inst Entity instance (WriterDocument)
@@ -174,9 +198,51 @@ class WriterDocumentMgr
     }
     
    /*
+      @brief Insert single entry by id
+      @param $inst WriterDocument instance pointer to initialize
+      @param $add_fields Array of columns names/columns values of additional fields
+      @param $db iDataBase derived instance
+    */
+    public static function insert(&$inst,$add_fields=null,$db=null){
+       //obtient la base de donnees courrante
+       global $app;
+       if(!$db && !$app->getDB($db))
+         return false;
+      
+       //id initialise ?
+       if(!isset($inst->writerDocumentId))
+           return RESULT(cResult::Failed, cApplication::EntityMissingId);
+      
+      //execute la requete
+       $query = "INSERT INTO writer_document (";
+       $query .= " writer_document_id,";
+       $query .= " doc_title,";
+       $query .= " content_type,";
+       $query .= " doc_content,";
+       if(is_array($add_fields))
+           $query .= implode(',',array_keys($add_fields)).',';
+       $query = substr($query,0,-1);//remove last ','
+       $query .= ")";
+       
+       $query .= " VALUES(";
+       $query .= $db->parseValue($inst->writerDocumentId).",";
+       $query .= $db->parseValue($inst->docTitle).",";
+       $query .= $db->parseValue($inst->contentType).",";
+       $query .= $db->parseValue($inst->docContent).",";
+       if(is_array($add_fields))
+           $query .= implode(',',$add_fields).',';
+       $query = substr($query,0,-1);//remove last ','
+       $query .= ")";
+       
+       if($db->execute($query,$result))
+          return true;
+
+       return false;
+    }
+    
+   /*
       @brief Update single entry by id
       @param $inst WriterDocument instance pointer to initialize
-      @param $id Primary unique identifier of entry to retreive
       @param $db iDataBase derived instance
     */
     public static function update(&$inst,$db=null){
@@ -187,7 +253,7 @@ class WriterDocumentMgr
       
        //id initialise ?
        if(!isset($inst->writerDocumentId))
-           return RESULT(cResult::Failed, cApplication::entityMissingId);
+           return RESULT(cResult::Failed, cApplication::EntityMissingId);
       
       //execute la requete
        $query = "UPDATE writer_document SET";

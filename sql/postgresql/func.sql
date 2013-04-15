@@ -47,7 +47,9 @@ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION writer_document_publish(
        p_doc_id writer_document.writer_document_id%type,
        p_page_id varchar,
-       p_parent_page_id writer_published.parent_page_id%type
+       p_parent_page_id writer_published.parent_page_id%type,
+       p_set_in_default writer_published.set_in_default%type,
+       p_set_in_cache writer_published.set_in_cache%type
 )
 RETURNS RESULT AS
 $$
@@ -58,7 +60,7 @@ BEGIN
   /* actualise l'entree existante  */
   select writer_published_id from writer_published into v_id where writer_document_id=p_doc_id;
   if v_id is not null then
-    update writer_published set parent_page_id = p_parent_page_id,  page_id = p_page_id where writer_published_id=v_id;
+    update writer_published set parent_page_id = p_parent_page_id,  page_id = p_page_id,  set_in_default = p_set_in_default,  set_in_cache = p_set_in_cache where writer_published_id=v_id;
     select 'ERR_OK', 'WRITER_DOCUMENT_PUBLISHED', 'WRITER_PUBLISHED_ID:'||v_id||';' into v_result;
     return v_result;
   end if;
@@ -66,7 +68,7 @@ BEGIN
   /* insert une nouvelle entree */
   select coalesce(max(writer_published_id),0)+1 from writer_published into v_id;
 
-  insert into writer_published (writer_published_id,writer_document_id,parent_page_id,page_id) values(v_id,p_doc_id,p_parent_page_id,p_page_id);
+  insert into writer_published (writer_published_id,writer_document_id,parent_page_id,page_id,set_in_default,set_in_cache) values(v_id,p_doc_id,p_parent_page_id,p_page_id,p_set_in_default,p_set_in_cache);
   select 'ERR_OK', 'WRITER_DOCUMENT_PUBLISHED', 'WRITER_PUBLISHED_ID:'||v_id||';' into v_result;
   return v_result;
 EXCEPTION

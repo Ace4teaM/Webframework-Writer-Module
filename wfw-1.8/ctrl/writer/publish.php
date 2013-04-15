@@ -38,7 +38,7 @@
 
 class Ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id', 'parent_page_id' );
-    public $op_fields = array( 'page_id', 'set_default_file_page_entry' );
+    public $op_fields = array( 'page_id', 'set_in_default', 'set_in_cache' );
 
     function main(iApplication $app, $app_path, $p) {
 
@@ -51,10 +51,10 @@ class Ctrl extends cApplicationCtrl{
         if(!$p->page_id)
             $p->page_id =  "uid_".uniqid();
 
-        $link = "show.php?writer_document_id=$p->writer_document_id";
+        $link = $app->makeCtrlURI("writer_module","view","writer_document_id=$p->writer_document_id");
 
-        //ajoute une entree au fichier default.xml ?
-        if($p->set_default_file_page_entry){
+        //ajoute une entrée au fichier default.xml ?
+        if($p->set_in_default){
             if(!$def->setIndex("page",$p->page_id,$link))
                 return false;
 
@@ -65,8 +65,17 @@ class Ctrl extends cApplicationCtrl{
                 return false;
         }
 
+        //entregistre le document en cache
+        if($p->set_in_cache){
+            if (!WriterDocumentMgr::getById($doc, $p->writer_document_id))
+                return RESULT(cResult::Failed,"WRITER_DOCUMENT_NOT_FOUND");
+            $filename = $app->getCfgValue("writer_module", "output_doc_path") . "/$p->page_id.html";
+            if(!file_put_contents($filename, $doc->docContent))
+                return RESULT(cResult::Failed,"WRITER_CANT_WRITE_CACHE_FILE",array("message"=>TRUE,"FILE"=>$filename));
+        }
+        
         //definit le document comme publié
-        if(!WriterModule::publishDocument($p->writer_document_id,$p->page_id,$p->parent_page_id))
+        if(!WriterModule::publishDocument($p->writer_document_id,$p->page_id,$p->parent_page_id,$p->set_in_default,$p->set_in_cache))
             return false;
 
         // Résultat de la requete

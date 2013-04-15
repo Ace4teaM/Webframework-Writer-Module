@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{F9EAB799-0EF6-464A-9F38-6CBB5C1CA1B1}" Label="" LastModificationDate="1364576101" Name="writer" Objects="26" Symbols="5" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{F9EAB799-0EF6-464A-9F38-6CBB5C1CA1B1}" Label="" LastModificationDate="1366011711" Name="writer" Objects="30" Symbols="5" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>WRITER</a:Code>
 <a:CreationDate>1364390262</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364576101</a:ModificationDate>
+<a:ModificationDate>1366011711</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -1192,9 +1192,9 @@ CARD 0 Arial,8,N</a:FontList>
 </o:AssociationLinkSymbol>
 <o:AssociationLinkSymbol Id="o9">
 <a:CreationDate>1364391837</a:CreationDate>
-<a:ModificationDate>1364392060</a:ModificationDate>
-<a:Rect>((-20812,-1050), (-19012,11137))</a:Rect>
-<a:ListOfPoints>((-19050,-1050),(-19050,5342),(-19162,5342),(-19162,11137))</a:ListOfPoints>
+<a:ModificationDate>1366009594</a:ModificationDate>
+<a:Rect>((-19162,-1050), (-16180,11137))</a:Rect>
+<a:ListOfPoints>((-16180,-1050),(-16180,5342),(-19162,5342),(-19162,11137))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1236,9 +1236,9 @@ Identifiers 0 Arial,8,N</a:FontList>
 </o:EntitySymbol>
 <o:EntitySymbol Id="o10">
 <a:CreationDate>1364391683</a:CreationDate>
-<a:ModificationDate>1364392058</a:ModificationDate>
+<a:ModificationDate>1366009594</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-26295,-5325), (-5849,1047))</a:Rect>
+<a:Rect>((-26294,-5325), (2250,1047))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
 <a:LineColor>11184640</a:LineColor>
 <a:FillColor>16777136</a:FillColor>
@@ -1288,7 +1288,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>WRITER_DOCUMENT</a:Code>
 <a:CreationDate>1364390265</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364399697</a:ModificationDate>
+<a:ModificationDate>1366009778</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o15">
@@ -1359,7 +1359,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>WRITER_PUBLISHED</a:Code>
 <a:CreationDate>1364391683</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364576101</a:ModificationDate>
+<a:ModificationDate>1366011711</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o24">
@@ -1411,6 +1411,26 @@ LABL 0 Arial,8,N</a:FontList>
 <o:DataItem Ref="o30"/>
 </c:DataItem>
 </o:EntityAttribute>
+<o:EntityAttribute Id="o31">
+<a:ObjectID>FEEFBB1B-6424-4D45-B827-873F075DFC47</a:ObjectID>
+<a:CreationDate>1366011683</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1366011711</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o32"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o33">
+<a:ObjectID>AF7BD1E8-D026-4462-ADBE-67DC778F8FB4</a:ObjectID>
+<a:CreationDate>1366011683</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1366011711</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<c:DataItem>
+<o:DataItem Ref="o34"/>
+</c:DataItem>
+</o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
 </c:Entities>
@@ -1436,7 +1456,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:DataType>TXT</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o31">
+<o:DataItem Id="o35">
 <a:ObjectID>63396D54-C19D-45DE-B5DD-5FB76684A60F</a:ObjectID>
 <a:Name>author</a:Name>
 <a:Code>AUTHOR</a:Code>
@@ -1500,6 +1520,26 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>VA160</a:DataType>
 <a:Length>160</a:Length>
 </o:DataItem>
+<o:DataItem Id="o32">
+<a:ObjectID>913DD823-FF85-49AB-BBED-0A47036190EF</a:ObjectID>
+<a:Name>set_in_default</a:Name>
+<a:Code>SET_IN_DEFAULT</a:Code>
+<a:CreationDate>1366011683</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1366011711</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<a:DataType>BL</a:DataType>
+</o:DataItem>
+<o:DataItem Id="o34">
+<a:ObjectID>1C08D735-ADAB-4969-8C93-7BA13ABF067A</a:ObjectID>
+<a:Name>set_in_cache</a:Name>
+<a:Code>SET_IN_CACHE</a:Code>
+<a:CreationDate>1366011683</a:CreationDate>
+<a:Creator>AceTeaM</a:Creator>
+<a:ModificationDate>1366011711</a:ModificationDate>
+<a:Modifier>AceTeaM</a:Modifier>
+<a:DataType>BL</a:DataType>
+</o:DataItem>
 </c:DataItems>
 <c:Associations>
 <o:Association Id="o14">
@@ -1508,7 +1548,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>WRITER_PUBLISH</a:Code>
 <a:CreationDate>1364391837</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392010</a:ModificationDate>
+<a:ModificationDate>1366009778</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 </o:Association>
 </c:Associations>
@@ -1517,7 +1557,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ObjectID>AEA33B66-D3C2-4547-806B-8D81456EC0A3</a:ObjectID>
 <a:CreationDate>1364391837</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364392010</a:ModificationDate>
+<a:ModificationDate>1366009778</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:Cardinality>0,n</a:Cardinality>
 <c:Object1>
@@ -1543,13 +1583,13 @@ LABL 0 Arial,8,N</a:FontList>
 </o:AssociationLink>
 </c:AssociationsLinks>
 <c:TargetModels>
-<o:TargetModel Id="o32">
+<o:TargetModel Id="o36">
 <a:ObjectID>BE3CED14-0F71-4E2D-BE9F-B2906A927628</a:ObjectID>
 <a:Name>writer</a:Name>
 <a:Code>WRITER</a:Code>
 <a:CreationDate>1364390747</a:CreationDate>
 <a:Creator>AceTeaM</a:Creator>
-<a:ModificationDate>1364390770</a:ModificationDate>
+<a:ModificationDate>1366009762</a:ModificationDate>
 <a:Modifier>AceTeaM</a:Modifier>
 <a:TargetModelURL>file:///C|/Users/AceTeaM/Documents/GitHub/Webframework-Writer-Module/mcd/writer.mld</a:TargetModelURL>
 <a:TargetModelID>A6A454FB-C3AB-44D4-9B56-7284110D6EBB</a:TargetModelID>

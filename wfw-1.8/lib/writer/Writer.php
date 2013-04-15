@@ -33,7 +33,9 @@ require_once("php/xml_default.php");
     
 class WriterModule implements iModule
 {
-    const documentNotExists = "WRITER_DOCUMENT_NOT_EXISTS";
+    const documentNotExists     = "WRITER_DOCUMENT_NOT_EXISTS";
+    const documentNotPublished  = "WRITER_DOCUMENT_NOT_PUBLISHED";
+    const documentCacheNotFound = "WRITER_DOCUMENT_CACHE_NOT_FOUND";
     
     public static function makeView($name,$attributes,$template_file){ 
     }
@@ -67,7 +69,7 @@ class WriterModule implements iModule
      * @param type $attributes
      * @param type $template_file
      */
-    public static function publishDocument($doc_id,$page_id,$parent_page_id){ 
+    public static function publishDocument($doc_id,$page_id,$parent_page_id,$set_in_default,$set_in_cache){ 
         global $app;
         $db=null;
         

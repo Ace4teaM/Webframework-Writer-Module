@@ -170,9 +170,16 @@ Ext.define('MyApp.Writer.Html.Editor', {
             iconCls: 'wfw_icon publish',
             handler:function(){
                 var form = Ext.create('MyApp.DataModel.FieldsDialog',{
-                    title: 'Nouveau',
+                    title: 'Publier',
                     fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
-                        wfw_fields:[{id:'page_id',optional:true},{id:'parent_page_id'},{id:'set_default_file_page_entry'},{id:'show_doc_after_publish'}]
+                        wfw_fields:[
+                            {id:'page_id',optional:true},
+                            {id:'parent_page_id'},
+                            {id:'set_in_default'},
+                            {id:'show_doc_after_publish'},
+                            {id:'set_in_cache'}
+                        ],
+                        defaults_buttons:false
                     }),
                     callback:function(data){
                         //appel le controleur
@@ -184,6 +191,8 @@ Ext.define('MyApp.Writer.Html.Editor', {
                             wfw.XArg.onCheckRequestResult_XARG,
                             {
                                 onsuccess:function(req,args){
+                                    if(data.show_doc_after_publish)
+                                        window.open(args.link);
                                     MyApp.showResultToMsg(wfw.Result.fromXArg(args));
                                 },
                                 onfailed:function(req,args){
@@ -193,8 +202,13 @@ Ext.define('MyApp.Writer.Html.Editor', {
                             false
                             );
                     }
-                }).show();
-
+                });
+                
+                //obtient lees infos existantes
+                form.getFieldsForm().loadFormData(wfw.Navigator.getURI("get_publish", {add_fields : {writer_document_id : me.docIdField.value}}));
+                
+                //affiche le formulaire
+                form.show();
             }
         });
 
