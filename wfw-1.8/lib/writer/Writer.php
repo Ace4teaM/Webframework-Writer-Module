@@ -26,9 +26,9 @@
  */
 
 
-require_once("php/class/bases/iModule.php");
-require_once("php/class/bases/socket.php");
-require_once("php/xml_default.php");
+require_once("class/bases/iModule.php");
+require_once("class/bases/socket.php");
+require_once("xml_default.php");
 
     
 class WriterModule implements iModule
