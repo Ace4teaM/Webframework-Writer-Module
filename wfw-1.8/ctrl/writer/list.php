@@ -62,7 +62,7 @@
  * 
  */
 
-class Ctrl extends cApplicationCtrl{
+class writer_module_list_ctrl extends cApplicationCtrl{
     public $fields    = null;
     public $op_fields = array('content_type');
 

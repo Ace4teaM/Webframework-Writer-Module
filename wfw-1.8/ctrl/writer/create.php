@@ -25,7 +25,7 @@
  * Rôle : Visiteur
  * UC   : writer_document_create
  */
-class Ctrl extends cApplicationCtrl{
+class writer_module_create_ctrl extends cApplicationCtrl{
     public $fields    = array('doc_title','content_type');
     public $op_fields = null;
 

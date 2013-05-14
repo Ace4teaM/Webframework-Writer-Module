@@ -26,7 +26,7 @@
  * UC   : user_activate_account
  */
 
-class Ctrl extends cApplicationCtrl{
+class writer_module_write_ctrl extends cApplicationCtrl{
     public $fields    = array( 'doc_content','writer_document_id' );
     public $op_fields = null;
 

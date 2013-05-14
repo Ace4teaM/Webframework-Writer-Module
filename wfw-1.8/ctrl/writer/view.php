@@ -26,7 +26,7 @@
  * UC   : user_activate_account
  */
 
-class Ctrl extends cApplicationCtrl{
+class writer_module_view_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = array( 'templatize' );
 

@@ -23,10 +23,10 @@
 /*
  * Lit le contenu d'un document
  * Rôle : Adminisrateur
- * UC   : read
+ * UC   : 
  */
 
-class Ctrl extends cApplicationCtrl{
+class writer_module_read_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = null;
 

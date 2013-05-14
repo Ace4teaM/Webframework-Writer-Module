@@ -36,7 +36,7 @@
  * 
  */
 
-class Ctrl extends cApplicationCtrl{
+class writer_module_publish_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id', 'parent_page_id' );
     public $op_fields = array( 'page_id', 'set_in_default', 'set_in_cache' );
 

@@ -26,7 +26,7 @@
  * UC   : get_publish
  */
 
-class Ctrl extends cApplicationCtrl{
+class writer_module_get_publish_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = null;
     

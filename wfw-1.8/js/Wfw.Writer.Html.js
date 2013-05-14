@@ -24,22 +24,25 @@ Ext.require([
     'Ext.data.*',
     'Ext.util.*',
     'Ext.state.*',
-    'Ext.ux.form.field.TinyMCE'
+    'Ext.ux.form.field.TinyMCE',
+    'Wfw.Result',
+    'Wfw.DataModel'
     ]);
 
 
 //loading functions
 //ajoutez à ce global les fonctions d'initialisations
-Ext.define('MyApp.Writer.Html', {});
+Ext.define('Wfw.Writer.Html', {});
 
 /*------------------------------------------------------------------------------------------------------------------*/
 //
 // Panneau d'edition principal
 //
 /*------------------------------------------------------------------------------------------------------------------*/
-Ext.define('MyApp.Writer.Html.Editor', {
+Ext.define('Wfw.Writer.Html.Editor', {
     name: 'Unknown',
     extend: 'Ext.panel.Panel',
+    alias: 'widget.wfw_writer_html_editor',
 
     newBtn:null,
     openBtn:null,
@@ -79,9 +82,9 @@ Ext.define('MyApp.Writer.Html.Editor', {
             text: 'Nouveau',
             iconCls: 'wfw_icon new',
             handler:function(){
-                var form = Ext.create('MyApp.DataModel.FieldsDialog',{
+                var form = Ext.create('Wfw.DataModel.FieldsDialog',{
                     title: 'Nouveau',
-                    fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
+                    fieldsform:Ext.create('Wfw.DataModel.FieldsForm',{
                         wfw_fields:[{ id:'doc_title' }],
                         defaults_buttons:false
                     }),
@@ -99,10 +102,10 @@ Ext.define('MyApp.Writer.Html.Editor', {
                                     me.docContentField.setValue(args.doc_content);
                                     me.docTitleField.setValue(args.doc_title);
                                     me.unlockLayout();
-                                    MyApp.showResultToMsg(wfw.Result.fromXArg(args));
+                                    Wfw.showResultToMsg(wfw.Result.fromXArg(args));
                                 },
                                 onfailed:function(req,args){
-                                    MyApp.showResultToMsg(wfw.Result.fromXArg(args));
+                                    Wfw.showResultToMsg(wfw.Result.fromXArg(args));
                                 }
                             },
                             false
@@ -117,7 +120,7 @@ Ext.define('MyApp.Writer.Html.Editor', {
             text: 'Ouvrir',
             iconCls: 'wfw_icon open',
             handler:function(){
-                var wnd = Ext.create('MyApp.Writer.OpenDialog',{
+                var wnd = Ext.create('Wfw.Writer.OpenDialog',{
                     title:'Ouvrir un document HTML...',
                     filter_type:'text/html',
                     callback:function(data){
@@ -145,10 +148,10 @@ Ext.define('MyApp.Writer.Html.Editor', {
                 wfw.Xml.onCheckRequestResult,
                 {
                     onsuccess:function(req,doc,root){
-                        MyApp.showResultToMsg(wfw.Result.fromXML(root));
+                        Wfw.showResultToMsg(wfw.Result.fromXML(root));
                     },
                     onfailed:function(req,doc,root){
-                        MyApp.showResultToMsg(wfw.Result.fromXML(root));
+                        Wfw.showResultToMsg(wfw.Result.fromXML(root));
                     }
                 },
                 false
@@ -171,9 +174,9 @@ Ext.define('MyApp.Writer.Html.Editor', {
             text: 'Publier',
             iconCls: 'wfw_icon publish',
             handler:function(){
-                var form = Ext.create('MyApp.DataModel.FieldsDialog',{
+                var form = Ext.create('Wfw.DataModel.FieldsDialog',{
                     title: 'Publier',
-                    fieldsform:Ext.create('MyApp.DataModel.FieldsForm',{
+                    fieldsform:Ext.create('Wfw.DataModel.FieldsForm',{
                         wfw_fields:[
                             {id:'page_id',optional:true},
                             {id:'parent_page_id'},
@@ -195,10 +198,10 @@ Ext.define('MyApp.Writer.Html.Editor', {
                                 onsuccess:function(req,args){
                                     if(data.show_doc_after_publish)
                                         window.open(args.link);
-                                    MyApp.showResultToMsg(wfw.Result.fromXArg(args));
+                                    Wfw.showResultToMsg(wfw.Result.fromXArg(args));
                                 },
                                 onfailed:function(req,args){
-                                    MyApp.showResultToMsg(wfw.Result.fromXArg(args));
+                                    Wfw.showResultToMsg(wfw.Result.fromXArg(args));
                                 }
                             },
                             false
@@ -302,108 +305,3 @@ Ext.define('MyApp.Writer.Html.Editor', {
     }
 
 });
-
-
-/*------------------------------------------------------------------------------------------------------------------*/
-//
-// Initialise le layout
-//
-/*------------------------------------------------------------------------------------------------------------------*/
-Ext.apply(MyApp.Writer.Html,{onInitLayout: function(Y){
-
-    var wfw = Y.namespace("wfw");
-    var g = MyApp.global.Vars;
-    
-    //var form = Ext.create('MyApp.DataModel.FieldsForm',{wfw_fields:[{id:'content_type'}]});
-    var editor = Ext.create('MyApp.Writer.Html.Editor');
-
-    var wfw = Y.namespace("wfw");
-    var g = MyApp.global.Vars;
-
-    //l'élément de résultat n'est plus utilisé
-    Y.Node.one("#result").hide();
-    
-    // Nord
-    g.statusPanel = Ext.create('Ext.Panel', {
-        header:false,
-        layout: 'hbox',
-        region: 'north',     // position for region
-        split: true,         // enable resizing
-        margins: '0 5 5 5',
-        /*html: Y.Node.one("#menu").get("innerHTML")*/
-        items: [{
-            header:false,
-            border: false,
-            width:200,
-            contentEl: Y.Node.one("#header").getDOMNode()
-        },{
-            header:false,
-            width:"100%",
-            border: false,
-            contentEl: Y.Node.one("#status").getDOMNode()
-        }],
-        renderTo: Ext.getBody()
-    });
-
-    // Ouest
-    g.menuPanel = Ext.create('Ext.Panel', {
-        title: 'Menu',
-        layout: {
-            // layout-specific configs go here
-            type: 'accordion',
-            titleCollapse: false,
-            animate: true,
-            activeOnTop: true
-        },
-        region: 'west',     // position for region
-        width: 200,
-        split: true,         // enable resizing
-        margins: '0 5 5 5',
-        /*html: Y.Node.one("#menu").get("innerHTML")*/
-        items: [{
-            title: 'Administrateur',
-            contentEl: Y.Node.one("#menu1").getDOMNode()
-        },{
-            title: 'Visiteur',
-            contentEl: Y.Node.one("#menu2").getDOMNode()
-        },{
-            title: 'Utilisateur',
-            contentEl: Y.Node.one("#menu3").getDOMNode()
-        }],
-        renderTo: Ext.getBody()
-    });
-
-    // Sud
-    g.footerPanel = Ext.create('Ext.Panel', {
-        header :false,
-        //title: 'Pied de page',
-        region: 'south',     // position for region
-        split: true,         // enable resizing
-        margins: '0 5 5 5',
-        contentEl: Y.Node.one("#footer").getDOMNode()
-    });
-
-    // Centre
-    g.contentPanel = Ext.create('Ext.Panel', {
-        header :false,
-        //title: 'Content',
-        region: 'center',     // position for region
-        split: true,         // enable resizing
-        margins: '0',
-        layout: 'fit',
-        autoScroll:true,
-        defaults:{
-            header:false,
-            border: false,
-            width:"100%"
-        },
-        items: [editor],
-        renderTo: Ext.getBody()
-    });
-
-    //viewport
-    g.viewport = Ext.create('Ext.Viewport', {
-        layout: 'border',
-        items: [g.contentPanel,g.menuPanel,g.statusPanel,g.footerPanel]
-    });
-}});

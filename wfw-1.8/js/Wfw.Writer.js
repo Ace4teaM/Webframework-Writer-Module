@@ -21,7 +21,7 @@
 
 //loading functions
 //ajoutez à ce global les fonctions d'initialisations
-Ext.define('MyApp.Writer', {});
+Ext.define('Wfw.Writer', {});
 
 /**
  *------------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ Ext.define('MyApp.Writer', {});
  * # Example
  *
  *     @code{.js}
- *     Ext.create('MyApp.Writer.OpenDialog', {
+ *     Ext.create('Wfw.Writer.OpenDialog', {
  *         callback:function(data){
  *              data.writer_document_id;
  *              data.doc_title;
@@ -42,7 +42,9 @@ Ext.define('MyApp.Writer', {});
  *     @endcode
  *------------------------------------------------------------------------------------------------------------------
  */
-Ext.define('MyApp.Writer.OpenDialog', {
+Ext.define('Wfw.Writer.OpenDialog', {
+    alias: 'widget.wfw_writer_opendialog',
+    
     /**
      * @param {String} filter_type
      * Specifie le type de contenu à ouvrir
