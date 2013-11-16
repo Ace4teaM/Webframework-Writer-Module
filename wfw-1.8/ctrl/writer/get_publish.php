@@ -49,12 +49,12 @@ class writer_module_get_publish_ctrl extends cApplicationCtrl{
             return parent::output($app, $format, $att, $result);
         
         switch($format){
-            case "xml":
+            case "text/xml":
                 $doc = new XMLDocument("1.0", "utf-8");
                 $dataEl = $doc->appendChild( $doc->createElement('data') );
                 $dataEl->appendChild( WriterPublishedMgr::toXML($this->publish, $doc) );
                 return '<?xml version="1.0" encoding="UTF-8" ?>'.$doc->saveXML( $doc->documentElement );
-            case "xarg":
+            case "text/xarg":
                 return xarg_encode_array( WriterPublishedMgr::toArray($this->publish) ) . xarg_encode_array($result->toArray());
         }
         return parent::output($app, $format, $att, $result);
