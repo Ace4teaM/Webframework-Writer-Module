@@ -65,6 +65,8 @@
 class writer_module_list_ctrl extends cApplicationCtrl{
     public $fields    = null;
     public $op_fields = array('content_type');
+    
+    private $list = null;
 
     function main(iApplication $app, $app_path, $p) {
 
@@ -97,19 +99,32 @@ class writer_module_list_ctrl extends cApplicationCtrl{
           array_push($list,$inst);
           $i++;
          }
-         RESULT_OK();
-           /*    
-        if(!WriterDocumentMgr::getAll($list,$cond))
-            goto failed;
-        */
-        //charge le contenu en selection
-        foreach($list as $key=>$inst)
-            $rootEl->appendChild(WriterDocumentMgr::toXML($inst, $doc));
-
-        $doc->appendAssocArray($rootEl,cResult::getLast()->toArray());
-        header("content-type: text/xml");
-        echo '<?xml version="1.0" encoding="UTF-8" ?>'.$doc->saveXML( $doc->documentElement );
-        exit;
+         
+        $this->list = $list;
+        
+        return RESULT_OK();
+    }
+    
+    function output(iApplication $app, $format, $att, $result)
+    {
+        if(!$result->isOK())
+            return parent::output($app, $format, $att, $result);
+        
+        switch($format){
+            case "text/xml":
+                $doc = new XMLDocument("1.0", "utf-8");
+                $dataEl = $doc->appendChild( $doc->createElement('data') );
+                //charge le contenu en selection
+                foreach($this->list as $key=>$inst)
+                    $dataEl->appendChild(WriterDocumentMgr::toXML($inst, $doc));
+                return '<?xml version="1.0" encoding="UTF-8" ?>'.$doc->saveXML( $doc->documentElement );
+            case "text/xarg":
+                $ret="";
+                foreach($this->list as $key=>$inst)
+                    $ret .= xarg_encode_array($inst);
+                return $ret;
+        }
+        return parent::output($app, $format, $att, $result);
     }
 };
 

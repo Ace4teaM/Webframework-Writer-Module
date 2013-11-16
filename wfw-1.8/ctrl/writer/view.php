@@ -29,6 +29,8 @@
 class writer_module_view_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = array( 'templatize' );
+    
+    private $doc = null;
 
     function main(iApplication $app, $app_path, $p) {
 
@@ -55,11 +57,41 @@ class writer_module_view_ctrl extends cApplicationCtrl{
                 exit;
             }
         }
+        
+        $this->doc = $doc;
 
         //affiche le document
-        header("content-type:$doc->contentType");
-        echo($content);
-        exit;
+//        header("content-type:$doc->contentType");
+//        echo($content);
+//        exit;
+        
+        return RESULT_OK();
+    }
+    
+    function output(iApplication $app, $format, $att, $result)
+    {
+        if(!$result->isOK())
+            return parent::output($app, $format, $att, $result);
+
+        if($this->doc->contentType != $format)
+            return RESULT(cResult::Failed,"UNSUPORTED_OUTPUT_FORMAT");
+        
+        switch($format){
+            case "text/html":
+                //convertie le contenu en instance de fichier XML
+                $doc = new XMLDocument();
+                if(!$doc->loadHTML($this->doc->docContent))
+                    return RESULT(cResult::Failed,XMLDocument::loadXML);
+                
+                // initialise à partir du template principale
+                $template = $app->createXMLView($doc,$att);
+                if(!$template)
+                    return false;
+                
+                //sortie
+                return $template->Make();
+        }
+        return parent::output($app, $format, $att, $result);
     }
 };
 ?>
