@@ -10,20 +10,19 @@
         <page id="yui_config" role="visitor" name="Configuration YUI">ctrl.php?app=wfw&amp;ctrl=yui_config</page>
         <page id="datamodel" role="visitor" name="Obtient le model de données">ctrl.php?app=wfw&amp;ctrl=datamodel</page>
         <!-- admin -->
-        <page id="create" role="administrator" name="Créer un document">ctrl.php?app=writer_module&amp;ctrl=create</page>
-        <page id="write" role="administrator" name="Editer un document">ctrl.php?app=writer_module&amp;ctrl=write</page>
-        <page id="list" role="administrator" name="Liste les documents">ctrl.php?app=writer_module&amp;ctrl=list</page>
-        <page id="publish" role="administrator" name="Publier un document">ctrl.php?app=writer_module&amp;ctrl=publish</page>
-        <page id="get_publish" role="administrator" name="Informations de publication d'un document">ctrl.php?app=writer_module&amp;ctrl=get_publish</page>
-        <page id="read" role="administrator" name="Lit un document">ctrl.php?app=writer_module&amp;ctrl=read</page>
+        <page id="writer_create" role="administrator" name="Créer un document">ctrl.php?app=writer_module&amp;ctrl=create</page>
+        <page id="writer_write" role="administrator" name="Editer un document">ctrl.php?app=writer_module&amp;ctrl=write</page>
+        <page id="writer_list" role="administrator" name="Liste les documents">ctrl.php?app=writer_module&amp;ctrl=list&amp;output=xml</page>
+        <page id="writer_publish" role="administrator" name="Publier un document">ctrl.php?app=writer_module&amp;ctrl=publish</page>
+        <page id="writer_get_publish" role="administrator" name="Informations de publication d'un document">ctrl.php?app=writer_module&amp;ctrl=get_publish</page>
+        <page id="writer_read" role="administrator" name="Lit un document">ctrl.php?app=writer_module&amp;ctrl=read</page>
         <!-- visiteur -->
-        <page id="view" role="visitor" name="Afficher un document">ctrl.php?app=writer_module&amp;ctrl=view</page>
+        <page id="writer_view" role="visitor" name="Afficher un document">ctrl.php?app=writer_module&amp;ctrl=view</page>
         <!-- utilisateur -->
     </index>
 
     <tree>
         <index></index>
-        <create/>
     </tree>
     
     <results lang="fr">
