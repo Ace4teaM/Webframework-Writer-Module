@@ -25,7 +25,7 @@ DECLARE
 	v_id INT;
 BEGIN
   /* verifie si le mail ou l'id est déjà utilisé par un autre compte */
-  select nextval('writer_document_seq') into v_id;
+  select nextval(pg_get_serial_sequence('writer_document', 'writer_document_id')) into v_id;
 
   /* insert l'entree */
   insert into writer_document (writer_document_id,doc_title,content_type) values(v_id,p_title,lower(p_content_type));
@@ -66,7 +66,7 @@ BEGIN
   end if;
 
   /* insert une nouvelle entree */
-  select nextval('writer_published_seq') into v_id;
+  select nextval(pg_get_serial_sequence('writer_published', 'writer_published_id')) into v_id;
 
   insert into writer_published (writer_published_id,writer_document_id,parent_page_id,page_id,set_in_default,set_in_cache) values(v_id,p_doc_id,p_parent_page_id,p_page_id,p_set_in_default,p_set_in_cache);
   select 'ERR_OK', 'WRITER_DOCUMENT_PUBLISHED', 'WRITER_PUBLISHED_ID:'||v_id||';' into v_result;
