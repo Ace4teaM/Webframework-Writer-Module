@@ -6,14 +6,13 @@
   PostgreSQL v8.3 (version minimum requise)
 */
 
-/*
+/**
   Crée un document
+
   Retourne:
      [RESULT] Un des résultats suivant:
         'ERR_OK, WRITER_DOCUMENT_CREATED (WRITER_DOCUMENT_ID)'   -> Document créé
-
 */
-
 CREATE OR REPLACE FUNCTION writer_create_document(
        p_title writer_document.doc_title%type,
        p_content_type writer_document.content_type%type
@@ -36,12 +35,12 @@ END;
 $$
 LANGUAGE plpgsql;
 
-/*
+/**
   Publie un document
+
   Retourne:
      [RESULT] Un des résultats suivant:
         'ERR_OK, WRITER_DOCUMENT_CREATED (WRITER_DOCUMENT_ID)'   -> Document créé
-
 */
 
 CREATE OR REPLACE FUNCTION writer_document_publish(

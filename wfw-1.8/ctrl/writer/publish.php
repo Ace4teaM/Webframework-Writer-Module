@@ -20,22 +20,22 @@
     ---------------------------------------------------------------------------------------------------------------------------------------
 */
 
-/**
- * @page writer_document_publish Writer Document Publish
- * 
- * # Publie un document
- * 
- * | Informations |                          |
- * |--------------|--------------------------|
- * | PageId       | publish
- * | Rôle         | Administrateur
- * | UC           | writer_document_publish
- * 
- * ## Arguments optionels:
- *  @param writer_document_id   Document à publier
- * 
+/*
+  Publie le contenu d'un document sur le serveur Web
+  
+  Role   : Tous
+  UC     : Publish
+  Module : writer
+ 
+  Champs:
+    writer_document_id : Identifiant du document
+    parent_page_id     : Identifiant du document parent
+    
+  Champs complémentaires:
+    page_id : ...
+    set_in_default : ...
+    set_in_cache : ...
  */
-
 class writer_module_publish_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id', 'parent_page_id' );
     public $op_fields = array( 'page_id', 'set_in_default', 'set_in_cache' );

@@ -21,11 +21,15 @@
 */
 
 /*
- * Obtient les informations de publication d'un document
- * Rôle : Administrateur
- * UC   : get_publish
+  Obtient les informations de publication d'un document
+  
+  Role   : Tous
+  UC     : Get_Publish
+  Module : writer
+ 
+  Champs:
+    writer_document_id : Identifiant du document
  */
-
 class writer_module_get_publish_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = null;

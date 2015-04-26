@@ -21,9 +21,15 @@
 */
 
 /*
- * Active un compte utilisateur
- * Rôle : Visiteur
- * UC   : writer_document_create
+  Crée un nouveau document
+  
+  Role   : Tous
+  UC     : Publish
+  Module : writer
+ 
+  Champs:
+    doc_title    : Titre du document
+    content_type : Type Mime du document
  */
 class writer_module_create_ctrl extends cApplicationCtrl{
     public $fields    = array('doc_title','content_type');

@@ -20,26 +20,21 @@
     ---------------------------------------------------------------------------------------------------------------------------------------
 */
 
-/**
- * @page writer_document_list Writer Document List
- * 
- * # Liste les documents existants
- * 
- * | Informations |                          |
- * |--------------|--------------------------|
- * | PageId       | list
- * | Rôle         | Administrateur
- * | UC           | writer_document_list
- * 
- * ## Arguments optionels:
- *  @param content_type   Type de contenu accepté
- *  @param published_only Inclue uniquement les documents publiées
- * 
- * ## Sortie:
- * Retourne les objets WriterDocument et le résultat de la procédure dans un document XML.
- * @remarks Le contenu du document n'est pas retourné (l'élément *doc_content* est toujours vide).
- * 
- * @code{.xml}
+/*
+  Liste les documents existants
+  
+  Role   : Tous
+  UC     : List
+  Module : writer
+ 
+  Champs complémentaires:
+    content_type : Filtre par type Mime
+	
+  Remarque:
+    Retourne les objets WriterDocument et le résultat de la procédure dans un document XML.
+	Le contenu du document n'est pas retourné (l'élément *doc_content* est toujours vide).
+
+  Exemple:
     <data>
         <writerdocument>
             <writer_document_id>542</writer_document_id>
@@ -58,10 +53,8 @@
         <result>ERR_OK</result>
         <error>SUCCESS</error>
     </data>
- * @endcode
- * 
- */
 
+ */
 class writer_module_list_ctrl extends cApplicationCtrl{
     public $fields    = null;
     public $op_fields = array('content_type');

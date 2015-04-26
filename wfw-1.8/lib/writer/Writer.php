@@ -20,28 +20,37 @@
     ---------------------------------------------------------------------------------------------------------------------------------------
 */
 
-/**
- * Gestionnaire de courriers électroniques
- * Librairie PHP5
- */
 
 
 require_once("class/bases/iModule.php");
 require_once("class/bases/socket.php");
 require_once("xml_default.php");
 
-    
+/**
+ * Gestionnaire de courriers électroniques
+ * Librairie PHP5
+ */
 class WriterModule implements iModule
 {
+    //--------------------------------------------------------
+    // Constantes des erreurs
+    // @class WriterModule
+    //--------------------------------------------------------
+    
     const documentNotExists     = "WRITER_DOCUMENT_NOT_EXISTS";
     const documentNotPublished  = "WRITER_DOCUMENT_NOT_PUBLISHED";
     const documentCacheNotFound = "WRITER_DOCUMENT_CACHE_NOT_FOUND";
+    
+    //--------------------------------------------------------
+    // Méthodes
+    // @class WriterModule
+    //--------------------------------------------------------
     
     public static function makeView($name,$attributes,$template_file){ 
     }
     
     /** 
-     * Cree un nouveau document
+     * @brief Cree un nouveau document
      * 
      * @param type $title
      * @param type $content_type
@@ -63,7 +72,7 @@ class WriterModule implements iModule
     }
     
     /** 
-     * Publie un document
+     * @brief Publie un document
      * 
      * @param type $name
      * @param type $attributes
@@ -86,7 +95,7 @@ class WriterModule implements iModule
     }
     
     /** 
-     * Fabrique un document HTML
+     * @brief Fabrique un document HTML
      * 
      * @param WriterDocument $doc Document a convertir
      * @return XMLDocument Instance du document XML

@@ -21,11 +21,15 @@
 */
 
 /*
- * Lit le contenu d'un document
- * Rôle : Adminisrateur
- * UC   : 
+  Affiche le contenu d'un document
+  
+  Role   : Tous
+  UC     : Read
+  Module : writer
+ 
+  Champs:
+    writer_document_id : Identifiant du document
  */
-
 class writer_module_read_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = null;

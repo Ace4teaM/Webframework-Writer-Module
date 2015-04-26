@@ -21,11 +21,16 @@
 */
 
 /*
- * Modifie le contenu d'un document
- * Rôle : Visiteur
- * UC   : user_activate_account
+  Modifie le contenu d'un document
+  
+  Role   : Tous
+  UC     : Write
+  Module : writer
+ 
+  Champs:
+    doc_content        : Contenu du document
+    writer_document_id : Identifiant du document
  */
-
 class writer_module_write_ctrl extends cApplicationCtrl{
     public $fields    = array( 'doc_content','writer_document_id' );
     public $op_fields = null;

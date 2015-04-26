@@ -21,11 +21,18 @@
 */
 
 /*
- * Modifie le contenu d'un document
- * Rôle : Visiteur
- * UC   : user_activate_account
+  Affiche le contenu d'un document
+  
+  Role   : Tous
+  UC     : View
+  Module : writer
+ 
+  Champs:
+    writer_document_id : Identifiant du document
+    
+  Champs complémentaires:
+    templatize : Si définit le document est ajouter au template par défaut de l'application
  */
-
 class writer_module_view_ctrl extends cApplicationCtrl{
     public $fields    = array( 'writer_document_id' );
     public $op_fields = array( 'templatize' );
